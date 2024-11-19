@@ -1,2 +1,5 @@
 # eric-rodriguez-jupiter
-portfolio project for Intro to Programming course with Code the Dream
+
+Eric Rodriguez
+
+Portfolio project for Intro to Programming course with Code the Dream
