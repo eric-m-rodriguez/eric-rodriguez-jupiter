@@ -72,8 +72,9 @@ section h2{
 }
 
 /* ========== About Me Section ========== */
-.about me p {
-    font-size: var(text-font-size);
+.about-me p {
+    font-size: var(--text-font-size);
+    text-align: left;
 }
 
 /* ========== Skills Section ==========*/
