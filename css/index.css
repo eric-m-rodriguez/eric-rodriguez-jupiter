@@ -58,7 +58,7 @@ header h1, footer p {
 main {
     width: var(--content-width);
     max-width: var(--max-content-width);
-    margin: 0, auto;
+    margin: 0 auto;
     padding: var(--section-padding);
 }
 
@@ -72,7 +72,7 @@ section h2{
 }
 
 /* ========== About Me Section ========== */
-.about-me p {
+.about p {
     font-size: var(--text-font-size);
     text-align: left;
 }
@@ -80,9 +80,11 @@ section h2{
 /* ========== Skills Section ==========*/
 .skills li {
     background-color: var(--light-bg);
-    padding: .5rem;
+    padding: 1rem;
     margin: .5rem 0;
     border-left: 4px solid var(--accent-color);
+    display: block;
+    
 }
 
 /* =========== Contact Section ========== */
