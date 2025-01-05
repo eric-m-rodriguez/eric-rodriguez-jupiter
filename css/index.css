@@ -155,13 +155,17 @@ section {
 }
 
 /* Experience Section */
-.experience-item {
-  display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
-  border-bottom: 0.01rem solid var(--secondary-color);
-  width: 100%;
+.experience-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax 30px, 1fr);
+  gap: 1rem;
 }
+
+.experience-item {
+  border-bottom: 0.01rem solid var(--secondary-color);
+padding: 1rem;
+}
+
 .job-info {
   display: flex;
   justify-content: space-between;
@@ -195,4 +199,5 @@ section {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  flex-wrap: wrap;
 }
