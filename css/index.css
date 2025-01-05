@@ -1,163 +1,198 @@
+/* Add to CSS 
+  1. add @media rule for responsive design;
+  2. edit contrast in <nav> for accessibility;
+  3. add child selectors;
+  4. add dark mode styles;
+  5. edit font?;
+  6. add flex box/grid box;
+  7. picture in /photos;
+  8. documentation within code;
+  9. add cursor stops;
+  10.check order: in <nav>;
+  11. add "home" href link to H1;
+  12. add border to <nav>;
+  13. object: fit?; 
+  14. add tabindex to html
+  15. background-blend-mode*/
 
 /* =========== Reset & Global Styles */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
 :root {
-/* Color Palette */
-    --primary-color: #343A40; /* dark grey for text and background color */
-    --secondary-color: #495057; /* lighter grey color for contrast */
-    --accent-color: #00A6ED; /* aqua blue for interactive elements */
-    --light-bg: #F8F9FA; /* light background for contrast */
-    --text-color:  #212529; /* almost black color for readability */
-    --footer-bg: #212529; /* dark footer background color */
+  /* Color Palette */
+  --primary-color: #343a40; /* dark grey for text and background color */
+  --secondary-color: #495057; /* lighter grey color for contrast */
+  --accent-color: #00a6ed; /* aqua blue for interactive elements */
+  --light-bg: #f8f9fa; /* light background for contrast */
+  --text-color: #212529; /* almost black color for readability */
+  --footer-bg: #212529; /* dark footer background color */
 
-/* Font Sizes */
-    --base-font-size: 100%; /* usually is 16px by default */
-    --header-font-size: 2.5rem;
-    --subheader-font-size: 1.75rem;
-    --text-font-size: 1rem;
+  /* Font Sizes */
+  --base-font-size: 100%; /* usually is 16px by default */
+  --header-font-size: 2.5rem;
+  --subheader-font-size: 1.75rem;
+  --text-font-size: 1rem;
 
-/* Spacing */
-    --section-padding: 2rem;
-    --content-width: 90%;
-    --max-content-width: 1200px;
-    --heading-height: 12rem;
-  
+  /* Spacing */
+  --section-padding: 2rem;
+  --content-width: 90%;
+  --max-content-width: 1200px;
+  --heading-height: 12rem;
 }
 
 body {
-    font-family: 'Nunito', sans-serif;
-    font-size: var(--base-font-size);   
-    margin: 0;
-    background-color: var(--light-bg);
-    color: var(--text-color);
-    line-height: 1.6; 
+  font-family: "Nunito", sans-serif;
+  font-size: var(--base-font-size);
+  margin: 0;
+  background-color: var(--light-bg);
+  color: var(--text-color);
+  line-height: 1.6;
 }
 
 a {
-    color: var(--accent-color);    
-    list-style-type: none;
+  color: var(--accent-color);
+  list-style-type: none;
 }
 
-a:hover, a:focus {
-    text-decoration: underline;
-    outline: 2px solid var(--accent-color); /* focus style for accessibiity */
+a:hover,
+a:focus {
+  text-decoration: underline;
+  outline: 2px solid var(--accent-color); /* focus style for accessibiity */
 }
 
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 /* ========== 2. Typography ==========*/
 h1 {
-    font-size: var(--header-font-size);
-    color: var (--primary-color);
-    justify-content: center;
+  font-size: var(--header-font-size);
+  color: var (--primary-color);
+  justify-content: center;
 }
 
 h2 {
-    font-size: var(--subheader-font-size);
-    color: var(--secondary-color);
-    margin-bottom: 1rem;
-    padding-bottom: .5rem;
-    border-bottom: 2px solid var(--accent-color);
+  font-size: var(--subheader-font-size);
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent-color);
 }
 
 p {
-    font-size: var(--text-font-size);
-    text-align: left;
+  font-size: var(--text-font-size);
+  text-align: justify;
 }
 
 a {
-    font-size: var(--text-font-size);
+  font-size: var(--text-font-size);
 }
 
 /* ========== 3. Layout ==========*/
 header {
-    background-color: var(--primary-color);
-    color: #FFFFFF;
-    padding: 1.5rem 0;
-    text-align: center;
-    margin: 0;
-    width: 100%;
-    position: fixed;
-    --heading-height: 12rem;
-    
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 1.5rem 0;
+  text-align: center;
+  margin: 0;
+  width: 100%;
+  position: fixed;
+  --heading-height: 12rem;
 }
 footer {
-    background-color: var(--primary-color);
-    color: #FFFFFF;
-    padding: 1.5rem 0;
-    text-align: center;
-    margin: 0;
-    width: 100%
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 1.5rem 0;
+  text-align: center;
+  margin: 0;
+  width: 100%;
 }
 
-header h1, footer p {
-    margin: 0
+header h1,
+footer p {
+  margin: 0;
 }
 
 main {
-    width: var(--content-width);
-    max-width: var(--max-content-width);
-    margin: 0 auto;
-    padding: var(--section-padding);
-    padding-top: var(--heading-height);
+  width: var(--content-width);
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: var(--section-padding);
+  padding-top: var(--heading-height);
 }
 
 /* ========== 4. Components ==========*/
 /* Navigation */
 nav {
-    display: flex;
-    flex-direction: row;
-    gap: space-between;
-    justify-content: center;
-    align-items: center; 
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
 }
 
 nav ul {
-    display: flex;
-    list-style-type: none; 
+  display: flex;
+  list-style-type: none;
 }
 
 nav li {
-    margin: 0;
-    padding: 0; 
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 nav a {
-    text-decoration: none;
-    color: var(--accent-color);
-    display: block;
-    padding: 0.5rem;
+  text-decoration: none;
+  color: var(--accent-color);
+  display: block;
+  padding: 0.5rem;
 }
 
 section {
-    scroll-margin-top: var(--heading-height);/* controls for nav element links to each section to offset fixed header */
+  scroll-margin-top: var(
+    --heading-height
+  ); /* controls for nav element links to each section to offset fixed header */
 }
 
 /* Experience Section */
 .experience-item {
-    display: flex;
-    flex-direction: column;
-    gap: .1rem;
-    border-bottom: .01rem solid var(--secondary-color);
-    width: 100%;
-
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  border-bottom: 0.01rem solid var(--secondary-color);
+  width: 100%;
 }
 .job-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-/* Contact Section */
-#connect ul {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    list-style-type: none;
-    align-items: center;
-    justify-content: center;
-    list-style-type: none;
+
+/* Connect Section */
+
+/* Creates Button-style Links */
+.button {
+  background-color: var(--secondary-color);
+  color: #ffffff;
+  border: 0.025rem solid transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+/* Button-style Links Accessibility */
+.button:hover {
+  background-color: var(--accent-color);
+  color: #ffffff;
+}
+
+/* Centers Button-Style Links */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
