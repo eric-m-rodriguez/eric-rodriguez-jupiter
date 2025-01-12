@@ -1,51 +1,128 @@
+<!-- To add to HTML for accessibility
+  1. <fieldset> and <legend>
+  2. contrast 
+  3. image with alt text 
+  4. re-add the <ul> and <li> -->
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">    
-    <meta name="keywords" content="HTML, CSS, Javascript">
-    <meta name="description" content="My HTML Learnings">
-    <meta name="author" content="Eric Rodriguez">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="HTML, CSS, Javascript" />
+    <meta name="description" content="My HTML Learnings" />
+    <meta name="author" content="Eric Rodriguez" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Eric Rodriguez's Portfolio content</title>
-    <link rel="stylesheet" href="css/index.css">
-</head>
+    <link rel="stylesheet" href="css/index.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <!-- Header Section -->
     <header>
-        <h1>Eric Rodriguez</h1>
+      <h1>Eric Rodriguez</h1>
+      <nav aria-label="Main Navigation">
+        <ul>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#connect">Connect</a></li>
+        </ul>
+      </nav>
     </header>
 
     <!-- Main Content Section -->
     <main>
-        <section id="about-me-section" class="about">
-            <h2>About</h2>
+      <section id="about">
+        <h2>About Me</h2>
 
-            <p>I am a web development student who is interested in open source data, accessibility, and tech for social good.</p>
-        </section>
+        <p>
+          I am a web development student who is interested in open source data,
+          accessibility, and tech for social good.
+        </p>
+      </section>
 
-        <section id="experience-section" class="skills">
-            <h2> Experience</h2>
-            <ul> 
-                <li>Javascript</li>
-                <li>SQL</li>
-                <li>HTML</li>
-            </ul>
-        </section>
+      <section id="experience" class="experience-section">
+        <h2>Experience</h2>
 
-        <section id="connect-section" class="connect">
-            <h2>Connect</h2>
-            <ul>
-                <li><a href="https://github.com/eric-m-rodriguez">Github</a></li>
-                <li><a href="https:www.linkedin.com/in/eric-rodriguez-743899b8">Linkedin</a></li>
-            </ul>
-        </section>
+        <!-- Job 1 -->
+        <article class="experience-item">
+          <div class="job-info">
+            <h3 class="job-title">Job 1 Title</h3>
+            <time class="job-dates">Jan 2020 - Dec 2022</time>
+          </div>
+          <p class="job description">
+            This is placeholder text for job description 1. There will be
+            information on duties, responsibilities, achievements, awards
+            earned, and any leadership positions held.
+          </p>
+        </article>
+
+        <!-- Job 2 -->
+        <article class="experience-item">
+          <div class="job-info">
+            <h3 class="job-title">Job 2 Title</h3>
+            <time class="job-dates"> Jan 2023 - Dec 2024</time>
+          </div>
+          <p class="job-description">
+            This is placeholder text for job description 2. There will be
+            information on duties, responsibilities, achievements, awards
+            earned, and any leadership positions held.
+          </p>
+        </article>
+
+        <!-- Job 3 -->
+        <article class="experience-item">
+          <div class="job-info">
+            <h3 class="job-title">Job 3 Title</h3>
+            <time class="job-dates"> Dec 2024 - present</time>
+          </div>
+          <p class="job-description">
+            This is placeholder text for job description 3. There will be
+            information on duties, responsibilities, achievements, awards
+            earned, and any leadership positions held.
+          </p>
+        </article>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <ul></ul>
+      </section>
+
+      <section id="connect">
+        <h2>Connect</h2>
+        <div class="button-container">
+          <a
+            href="https://github.com/eric-m-rodriguez"
+            target="blank"
+            class="button"
+            aria-label="Github"
+            >Github
+            <i class="fab fa-github"></i>
+          </a>
+
+          <a
+            href="https:www.linkedin.com/in/eric-rodriguez-743899b8"
+            target="blank"
+            class="button"
+            aria-label="Linkedin"
+            >Linkedin
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </section>
     </main>
 
-<!-- Footer Section -->
-    <footer>
-        <p> &copy; 2024 Eric Rodriguez</p>
-    </footer>
-
-</body>
+    <!-- Footer Section -->
+    <footer>&copy; 2024 Eric Rodriguez</footer>
+  </body>
 </html>
