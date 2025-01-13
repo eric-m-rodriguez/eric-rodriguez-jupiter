@@ -1,6 +1,7 @@
 /* =========== Reset & Global Styles */
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
+/* =========== CSS Variables ==========*/
 :root {
   /* Color Palette */
   --primary-color: #343a40;
@@ -10,49 +11,20 @@
   --text-color: #212529;
   --footer-bg: #212529;
   --nav-border-color: rgba(255, 255, 255, 0.1);
-  
-  /* Dark Mode Colors */
   --dark-bg: #121212;
   --dark-text: #ffffff;
   --dark-secondary: #333333;
   --dark-accent: #2196f3;
   
-  /* Font Sizes */
+  /* =========== Base Sizes (Mobile First) ===========*/
   --base-font-size: 100%;
-  --header-font-size: 2.5rem;
-  --subheader-font-size: 1.75rem;
+  --header-font-size: 1.5rem;
+  --subheader-font-size: 1.25rem;
   --text-font-size: 1rem;
-  
-  /* Spacing */
-  --section-padding: 2rem;
-  --content-width: 90%;
+  --section-padding: 1rem;
+  --content-width: 95%;
   --max-content-width: 1200px;
-  --heading-height: 12rem;
-}
-
-/* Dark Mode Styles */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: var(--dark-bg);
-    color: var(--dark-text);
-  }
-  
-  h1, h2 {
-    color: var(--dark-text);
-  }
-  
-  .experience-item {
-    border-color: var(--dark-secondary);
-  }
-  
-  .button {
-    background-color: var(--dark-secondary);
-    color: var(--dark-text);
-  }
-  
-  header, footer {
-    background-color: var(--dark-secondary);
-  }
+  --heading-height: 8rem;
 }
 
 body {
@@ -64,7 +36,6 @@ body {
   line-height: 1.6;
 }
 
-/* Improved Accessibility for Links */
 a {
   color: var(--accent-color);
   text-decoration: none;
@@ -78,19 +49,19 @@ a:focus {
   outline-offset: 2px;
 }
 
-/* Remove default list styling */
 ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-/* Typography with improved hierarchy */
 h1 {
   font-size: var(--header-font-size);
-  color: var(--primary-color);
-  text-align: center;
-  cursor: pointer; /* Added for H1 home link */
+  color: #ffffff;
+  cursor: pointer;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 800;
 }
 
 h1 a {
@@ -104,19 +75,19 @@ h2 {
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--accent-color);
+  text-align: center;
 }
 
-/* Layout Components */
 header {
   background-color: var(--primary-color);
   color: #ffffff;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
   text-align: center;
   margin: 0;
   width: 100%;
   position: fixed;
   height: var(--heading-height);
-  z-index: 1000;
+  z-index: 1;
   border-bottom: 1px solid var(--nav-border-color);
 }
 
@@ -128,7 +99,6 @@ main {
   padding-top: calc(var(--heading-height) + 2rem);
 }
 
-/* Navigation with improved accessibility */
 nav {
   display: flex;
   justify-content: center;
@@ -136,13 +106,14 @@ nav {
   background-color: var(--primary-color);
   border: 1px solid var(--nav-border-color);
   border-radius: 4px;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 
 nav ul {
   display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
 nav a {
@@ -151,6 +122,9 @@ nav a {
   border-radius: 4px;
   background-color: transparent;
   transition: background-color 0.3s ease;
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
 }
 
 nav a:hover,
@@ -160,11 +134,20 @@ nav a:focus {
   text-decoration: none;
 }
 
-/* Experience Section with improved layout */
+.about-me-section {
+  display: block;
+  padding: 2rem;
+  background-color: var(--light-bg);
+  border-radius: 8px;
+  margin-top: 2rem;
+  text-align: center;
+  color: var(--text-color)
+}
+
 .experience-section {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: 1fr;
+  gap: 1rem;
   padding: var(--section-padding);
 }
 
@@ -172,10 +155,11 @@ nav a:focus {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 1.5rem;
+  padding: 1rem;
   border: 1px solid var(--secondary-color);
   border-radius: 8px;
   background-color: rgba(255, 255, 255, 0.05);
+  margin: 0.5rem 0;
 }
 
 .job-info {
@@ -187,6 +171,8 @@ nav a:focus {
 .job-title {
   font-weight: bold;
   color: var(--accent-color);
+  font-size: 1.1rem;
+  text-align: center;
 }
 
 .job-description {
@@ -194,7 +180,6 @@ nav a:focus {
   line-height: 1.6;
 }
 
-/* Button Styles with improved accessibility */
 .button {
   background-color: var(--secondary-color);
   color: #ffffff;
@@ -206,6 +191,9 @@ nav a:focus {
   gap: 0.5rem;
   transition: all 0.3s ease;
   text-decoration: none;
+  width: 100%;
+  justify-content: center;
+  font-size: 1.1rem;
 }
 
 .button:hover,
@@ -218,48 +206,112 @@ nav a:focus {
 
 .button-container {
   display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1rem;
   margin: 2rem 0;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
+/* =========== Tablet Styles (min-width: 768px) */
+@media screen and (min-width: 768px) {
   :root {
     --header-font-size: 2rem;
     --subheader-font-size: 1.5rem;
     --heading-height: 10rem;
+    --section-padding: 1.5rem;
+  }
+
+  h1 {
+    letter-spacing: 1px;
+    text-transform: none;
+  }
+
+  h2 {
+    text-align: left;
+    border-bottom-width: 3px;
   }
 
   nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  nav a {
+    width: auto;
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+
+  .about-me-section {
+    padding: 3rem;
+    margin-top: 3rem;
+    text-align: left;
   }
 
   .experience-section {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .button {
+    width: auto;
   }
 
   .button-container {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
   }
 }
 
-/* Accessibility - Tab Focus Styles */
+
+/* =========== Desktop Styles (min-width: 1024px) */
+@media screen and (min-width: 1024px) {
+  :root {
+    --header-font-size: 2.5rem;
+    --subheader-font-size: 1.75rem;
+    --heading-height: 12rem;
+    --section-padding: 2rem;
+  }
+
+  main {
+    width: 90%;
+  }
+
+  .experience-section {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  nav a {
+    font-size: 1rem;
+  }
+
+  .experience-item {
+    padding: 1.5rem;
+    margin: 0;
+  }
+
+  .job-title {
+    text-align: left;
+  }
+}
+
+ .about-me-section {
+  padding: 4rem;
+  margin-top: 4rem;
+  text-align: left; 
+}
+
+/* =========== Accessibility Styles ==========*/
 *:focus-visible {
   outline: 3px solid var(--accent-color);
   outline-offset: 2px;
 }
 
-/* Ensure sections clear fixed header */
 section {
   scroll-margin-top: calc(var(--heading-height) + 1rem);
 }
 
-/* Image Handling */
 img {
   max-width: 100%;
   height: auto;
