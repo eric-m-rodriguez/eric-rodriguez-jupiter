@@ -15,7 +15,7 @@
   --dark-text: #ffffff;
   --dark-secondary: #333333;
   --dark-accent: #2196f3;
-  
+
   /* =========== Base Sizes (Mobile First) ===========*/
   --base-font-size: 100%;
   --header-font-size: 1.5rem;
@@ -141,7 +141,7 @@ nav a:focus {
   border-radius: 8px;
   margin-top: 2rem;
   text-align: center;
-  color: var(--text-color)
+  color: var(--text-color);
 }
 
 .experience-section {
@@ -221,96 +221,96 @@ nav a:focus {
     --subheader-font-size: 1.5rem;
     --heading-height: 10rem;
     --section-padding: 1.5rem;
-  
 
-  h1 {
-    letter-spacing: 1px;
-    text-transform: none;
+    h1 {
+      letter-spacing: 1px;
+      text-transform: none;
+    }
+
+    h2 {
+      text-align: left;
+      border-bottom-width: 3px;
+    }
+
+    nav ul {
+      flex-direction: row;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      width: auto;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    .about-me-section {
+      padding: 3rem;
+      margin-top: 3rem;
+      text-align: left;
+    }
+
+    .experience-section {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .button {
+      width: auto;
+    }
+
+    .button-container {
+      flex-direction: row;
+      justify-content: center;
+      gap: 1.5rem;
+    }
   }
 
-  h2 {
-    text-align: left;
-    border-bottom-width: 3px;
+  /* =========== Desktop Styles (min-width: 1024px) */
+  @media screen and (min-width: 1024px) {
+    /* Desktop styles */
+    :root {
+      --header-font-size: 2.5rem;
+      --subheader-font-size: 1.75rem;
+      --heading-height: 12rem;
+      --section-padding: 2rem;
+    }
+
+    main {
+      width: 90%;
+    }
+
+    .experience-section {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    nav a {
+      font-size: 1rem;
+    }
+
+    .experience-item {
+      padding: 1.5rem;
+      margin: 0;
+    }
+
+    .job-title {
+      text-align: left;
+    }
   }
 
-  nav ul {
-    flex-direction: row;
-    gap: 1.5rem;
+  /* =========== Accessibility Styles ==========*/
+  *:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
   }
 
-  nav a {
-    width: auto;
-    font-size: 0.9rem;
-    font-weight: bold;
+  section {
+    scroll-margin-top: calc(var(--heading-height) + 1rem);
   }
 
-  .about-me-section {
-    padding: 3rem;
-    margin-top: 3rem;
-    text-align: left;
+  img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
   }
-
-  .experience-section {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-
-  .button {
-    width: auto;
-  }
-
-  .button-container {
-    flex-direction: row;
-    justify-content: center;
-    gap: 1.5rem;
-  }
-}
-
-/* =========== Desktop Styles (min-width: 1024px) */
-@media screen and (min-width: 1024px) {
-  /* Desktop styles */
-  :root {
-    --header-font-size: 2.5rem;
-    --subheader-font-size: 1.75rem;
-    --heading-height: 12rem;
-    --section-padding: 2rem;
-  }
-
-  main {
-    width: 90%;
-  }
-
-  .experience-section {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-  }
-
-  nav a {
-    font-size: 1rem;
-  }
-
-  .experience-item {
-    padding: 1.5rem;
-    margin: 0;
-  }
-
-  .job-title {
-    text-align: left;
-  }
-}
-
-/* =========== Accessibility Styles ==========*/
-*:focus-visible {
-  outline: 3px solid var(--accent-color);
-  outline-offset: 2px;
-}
-
-section {
-  scroll-margin-top: calc(var(--heading-height) + 1rem);
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  object-fit: cover;
 }
