@@ -233,7 +233,15 @@ section {
       scroll-margin-top: 12rem;
     }
   }
-
+  .about-me-section {
+    padding: 2.5rem;
+    margin-top: 2.5rem;
+  }
+  
+  .experience-section {
+    grid-template-columns: 1.25fr;
+    gap: 1.25rem;
+  }
 /* =========== Desktop Styles (min-width: 1024px) ============*/
 @media screen and (min-width: 1024px) {
   header {
@@ -248,6 +256,17 @@ section {
   section {
     scroll-margin-top: 14rem;
   }
+}
+
+.about-me-section {
+  padding: 3rem;
+  margin-top: 3rem;
+
+}
+
+.experience-section {
+  grid-template-columns: 1.5fr;
+  gap: 1.5rem;
 }
 
 /* =========== Accessibility Styles ==========*/
