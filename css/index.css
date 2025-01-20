@@ -286,23 +286,23 @@ section {
 
 .about-me-section {
   /* Adjust padding and font-size */
-  padding: 6rem;
+  padding: 5rem;
   margin-top: 4rem;
   font-size: 1.75rem;
   background-color: #d6d8db;
   color: #212529;
   margin-top: 4rem;
   border-radius: 2rem;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 2);
 }
 
 .experience-section {
   /* Adjust grid-template-columns, padding */
-  grid-template-columns: 1.5fr;
+  grid-template-columns: 2fr 1fr;
   gap: 3rem;
-  background-color: black;
+  background-color: #333;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   border-radius: 2rem;
   border: 1px solid var(--accent-color);
   transform: scale(1.05);
@@ -314,8 +314,8 @@ section {
   padding: 1.5rem 2rem;
   border-radius: 2rem;
   gap: 1.25rem;
-  font-size: 2rem;
-  border: 3px solid var(--accent-color);
+  font-size: 1.75rem;
+  border: 2px solid var(--accent-color);
 }
 
 /* Accessibility Styles */
