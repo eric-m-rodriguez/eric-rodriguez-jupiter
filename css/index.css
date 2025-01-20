@@ -236,29 +236,14 @@ section {
   .about-me-section {
     padding: 2.5rem;
     margin-top: 2.5rem;
+    background-color: grey;
+    color: black;
   }
   
   .experience-section {
     grid-template-columns: 1.25fr;
     gap: 1.25rem;
   }
-
-  .about-me-section {
-  display: block;
-  padding: 2rem;
-  background-color: var(--light-bg);
-  border-radius: 8px;
-  margin-top: 2rem;
-  text-align: center;
-  color: var(--text-color);
-}
-
-.experience-section {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  padding: var(--section-padding);
-}
 
 .button {
   padding: 0.75rem 1.5rem;
@@ -287,13 +272,16 @@ section {
   padding: 3rem;
   margin-top: 3rem;
   font-size: 1.1rem;
-
+  background-color: black;
+  color: white;
 }
 
 .experience-section {
   grid-template-columns: 1.5fr;
   gap: 1.5rem;
   font-size: 1.1rem;
+  background-color: black;
+  color: white
 }
 
 .button {
