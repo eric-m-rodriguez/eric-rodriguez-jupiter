@@ -1,7 +1,7 @@
-/* =========== Reset & Global Styles */
+/* Reset & Global Styles */
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
-/* =========== Mobile Styles: Applied to mobile devices smaller than 768px ==========*/
+/* Mobile Styles: Applied to mobile devices smaller than 768px */
 :root {
   /* Color Palette */
   --primary-color: #343a40;
@@ -218,7 +218,7 @@ section {
   margin: 2rem 0;
 }
 
-/* =========== Tablet Styles: Applied for screens 768px and above ===========*/
+/* Tablet Styles: Applied for screens 768px and above */
   @media screen and (min-width: 768px) {
     header {
       height: 10rem;
@@ -246,12 +246,12 @@ section {
   }
   
   .experience-section {
-    grid-template-columns: 1.25fr;
+    grid-template-columns: 1fr, 1fr;
     gap: 2rem;
     font-size: 1rem;
     background-color: grey;
     color: black;
-    padding: 3rem;
+    padding: 2rem;
     border-radius: 1rem;
   }
 
@@ -259,11 +259,11 @@ section {
   padding: 1rem 2rem;
   border-radius: 1.25rem;
   gap: 0.75rem;
-  font-size: 1.25rem;
-  border: 2px solid var(--secondary-color);
+  font-size: 1.5rem;
+  border: 2px solid var(--accent-color);
 }
 
-/* =========== Desktop Styles: Applied for screens 1024px and above ============*/
+/* Desktop Styles: Applied for screens 1024px and above */
 @media screen and (min-width: 1024px) {
   header {
     height: 12rem;
@@ -312,7 +312,7 @@ section {
   border: 3px solid var(--accent-color);
 }
 
-/* =========== Accessibility Styles ==========*/
+/* Accessibility Styles */
 *:focus-visible {
   outline: 3px solid var(--accent-color);
   outline-offset: 2px;
