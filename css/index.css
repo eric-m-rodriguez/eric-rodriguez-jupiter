@@ -3,7 +3,7 @@
 
 /* =========== CSS Variables ==========*/
 :root {
-  /* Color Palette */
+  /* Color Palette - These don't change with media queries */
   --primary-color: #343a40;
   --secondary-color: #495057;
   --accent-color: #00a6ed;
@@ -15,22 +15,11 @@
   --dark-text: #ffffff;
   --dark-secondary: #333333;
   --dark-accent: #2196f3;
-
-  /* Typography */
-  --base-font-size: 16px;
-  --header-font-size: 2rem;
-  --subheader-font-size: 1.5rem;
-
-  /* Layout */
-  --heading-height: 8rem;
-  --content-width: 95%;
-  --max-content-width: 1200px;
-  --section-padding: 2rem;
 }
 
 body {
   font-family: "Nunito", sans-serif;
-  font-size: var(--base-font-size);
+  font-size: 16px;
   margin: 0;
   background-color: var(--light-bg);
   color: var(--text-color);
@@ -57,7 +46,7 @@ ul {
 }
 
 h1 {
-  font-size: var(--header-font-size);
+  font-size: 2rem;
   color: #ffffff;
   cursor: pointer;
   margin: 0;
@@ -71,7 +60,7 @@ h1 a {
 }
 
 h2 {
-  font-size: var(--subheader-font-size);
+  font-size: 1.5rem;
   color: var(--secondary-color);
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
@@ -87,17 +76,17 @@ header {
   margin: 0;
   width: 100%;
   position: fixed;
-  height: var(--heading-height);
+  height: 8rem;
   z-index: 1;
   border-bottom: 1px solid var(--nav-border-color);
 }
 
 main {
-  width: var(--content-width);
-  max-width: var(--max-content-width);
+  width: 95%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: var(--section-padding);
-  padding-top: calc(var(--heading-height) + 2rem);
+  padding: 2rem;
+  padding-top: 10rem;
 }
 
 nav {
@@ -149,7 +138,7 @@ nav a:focus {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
-  padding: var(--section-padding);
+  padding: 2rem;
 }
 
 .experience-item {
@@ -220,6 +209,10 @@ nav a:focus {
     font-size: 1.5rem;
   }
 
+  main {
+    padding-top: 12rem;
+  }
+
   h1 {
     letter-spacing: 1px;
     text-transform: none;
@@ -274,6 +267,7 @@ nav a:focus {
   
   main {
     width: 90%;
+    padding-top: 14rem;
   }
 
   h1 {
@@ -310,7 +304,19 @@ nav a:focus {
 }
 
 section {
-  scroll-margin-top: calc(var(--heading-height) + 1rem);
+  scroll-margin-top: 10rem;
+}
+
+@media screen and (min-width: 768px) {
+  section {
+    scroll-margin-top: 12rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  section {
+    scroll-margin-top: 14rem;
+  }
 }
 
 img {
