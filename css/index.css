@@ -298,7 +298,7 @@ section {
 
 .experience-section {
   /* Adjust grid-template-columns, padding */
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 3rem;
   background-color: #333;
   color: white;
