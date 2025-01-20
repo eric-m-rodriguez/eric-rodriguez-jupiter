@@ -261,12 +261,14 @@ section {
 .about-me-section {
   padding: 3rem;
   margin-top: 3rem;
+  font-size: 1.1rem;
 
 }
 
 .experience-section {
   grid-template-columns: 1.5fr;
   gap: 1.5rem;
+  font-size: 1.1rem;
 }
 
 /* =========== Accessibility Styles ==========*/
