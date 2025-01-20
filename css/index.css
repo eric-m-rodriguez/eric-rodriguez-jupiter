@@ -221,32 +221,32 @@ section {
 /* =========== Tablet Styles (min-width: 768px) ===========*/
   @media screen and (min-width: 768px) {
     header {
-      height: var(--header-height-md);
-      padding: var(--header-padding-md);
+      height: 10rem;
+      padding-top: 1.5rem;
     }
   
     main {
-      padding-top: var(--main-padding-top-md);
+      padding-top: 12rem;
     }
   
     section {
-      scroll-margin-top: var(--section-margin-top-md);
+      scroll-margin-top: 12rem;
     }
   }
 
 /* =========== Desktop Styles (min-width: 1024px) ============*/
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   header {
-    height: var(--header-height-md);
-    padding: var(--header-padding-md);
+    height: 12rem;
+    padding-top: 2rem;
   }
 
   main {
-    padding-top: var(--main-padding-top-md);
+    padding-top: 14rem;
   }
 
   section {
-    scroll-margin-top: var(--section-margin-top-md);
+    scroll-margin-top: 14rem;
   }
 }
 
