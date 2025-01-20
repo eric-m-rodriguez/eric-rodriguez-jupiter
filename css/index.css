@@ -1,7 +1,7 @@
 /* =========== Reset & Global Styles */
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
-/* =========== This section pertains to default default styles for small device base styles ==========*/
+/* =========== Mobile Styles: Applied to mobile devices smaller than 768px ==========*/
 :root {
   /* Color Palette */
   --primary-color: #343a40;
@@ -227,10 +227,12 @@ section {
   
     main {
       padding-top: 12rem;
+      margin: 0 auto;
     }
   
     section {
       scroll-margin-top: 12rem;
+      padding: 2rem;
     }
   }
   .about-me-section {
@@ -269,10 +271,12 @@ section {
 
   main {
     padding-top: 14rem;
+    margin: auto;
   }
 
   section {
     scroll-margin-top: 14rem;
+    padding: 3rem;
   }
 }
 
