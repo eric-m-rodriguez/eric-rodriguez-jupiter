@@ -287,9 +287,9 @@ section {
 }
 
 .about-me-section {
-  padding: 5rem; /* adjusts padding */
+  padding: 5rem; /* increases padding */
   margin-top: 4rem;
-  font-size: 1.75rem; /* adjusts font size */
+  font-size: 1.75rem; /* increases font size */
   background-color: #d6d8db;
   color: #212529;
   margin-top: 4rem;
@@ -306,11 +306,11 @@ section {
   border-radius: 2rem;
   border: 1px solid var(--accent-color);
   transform: scale(1.05);
-  padding: 4rem; /* adjusts padding */
+  padding: 4rem; /* increases padding */
 }
 
 .button {
-  padding: 1.5rem 2rem; /* adjusts padding */
+  padding: 1.5rem 2rem; /* increases padding */
   border-radius: 2rem; /* increases border radius */
   gap: 1.25rem; /* increases gap */
   font-size: 1.75rem; /* increases font size */
