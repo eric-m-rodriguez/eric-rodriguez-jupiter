@@ -270,26 +270,34 @@ section {
 
 /* Desktop Styles: Applied for screens 1024px and above */
 @media screen and (min-width: 1024px) {
+  /* header adjustments for improved visibility and spacing */
   header {
     height: 12rem;
     padding-top: 2rem;
   }
-
+/*Main content spacing adjustments for desktop view */
   main {
     padding-top: 14rem;
     margin: 0 auto;
   }
 
+  /*Navigation adjustments for enhanced desktop interaction */
+  nav {
+    padding: 2rem 0; /* increased padding for better clickability */
+    max-width: 80%; /* constrained width for better readability */
+  }
+
+  /*Section spacing and visual improvements for desktop */
   section {
     scroll-margin-top: 14rem;
     padding: 3rem;
   }
 }
-
+/* about section modifications for desktop presentation */
 .about-me-section {
-  padding: 5rem; /* increases padding */
+  padding: 5rem; /* increases padding for better content spacing*/
   margin-top: 4rem;
-  font-size: 1.75rem; /* increases font size */
+  font-size: 1.75rem; /* larger font for desktop viewing */
   background-color: #d6d8db;
   color: #212529;
   margin-top: 4rem;
@@ -309,11 +317,12 @@ section {
   padding: 4rem; /* increases padding */
 }
 
+/* button enhancements for desktop interaction */
 .button {
-  padding: 1.5rem 2rem; /* increases padding */
+  padding: 1.5rem 2rem; /* Enlarged padding for better clickability*/
   border-radius: 2rem; /* increases border radius */
   gap: 1.25rem; /* increases gap */
-  font-size: 1.75rem; /* increases font size */
+  font-size: 1.75rem; /* Increased font size for better readability*/
   border: 2px solid var(--accent-color);
 }
 
