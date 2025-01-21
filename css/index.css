@@ -254,6 +254,8 @@ section {
       border: 2px solid var(--accent-color); /* adds new border */
     }
   }
+
+  /* About me section modifications for tablet presentation */
   .about-me-section {
     padding: 3rem; /* adjusts padding */
     margin-top: 3rem; /* adjusts margin top */
@@ -263,7 +265,8 @@ section {
     border-radius: 1.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* new box shadow added */
   }
-  
+
+  /* Experience section with two columns layout for optimal viewing on tablet */
   .experience-section {
     grid-template-columns: 1fr 1fr; /* adjusts grid columns */
     gap: 2rem; /* adjusts gap */
@@ -275,6 +278,7 @@ section {
     border: 2.5px solid var(--accent-color); /* adds new border */
   }
 
+  /* Button stylings with interactive elements for tablet cursor precision */
 .button {
   padding: 1rem 2rem; /* adjusts padding */
   border-radius: 1.25rem; /* adjusts border radius */
@@ -289,11 +293,13 @@ section {
   header {
     height: 12rem;
     padding-top: 2rem;
+    background-color: #2d3236; /* darker background for desktop distinction */
   }
 /*Main content spacing adjustments for desktop view */
   main {
     padding-top: 14rem;
     margin: 0 auto;
+    max-width: 1200px; /* constrained width for optimal desktop readability */
   }
 
   /*Navigation adjustments for enhanced desktop interaction */
@@ -308,7 +314,7 @@ section {
     padding: 3rem;
   }
 }
-/* about section modifications for desktop presentation */
+/* About me section modifications for desktop presentation */
 .about-me-section {
   padding: 5rem; /* increases padding for better content spacing*/
   margin-top: 4rem;
@@ -320,8 +326,9 @@ section {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 2);
 }
 
+/* Experience section with three columns layout for optimal viewing on desktop */
 .experience-section {
-  grid-template-columns: 1fr 1fr 1fr; /* adjusts grid columns */
+  grid-template-columns: 1fr 1fr 1fr; /* creates balanced three-column layout */
   gap: 3rem;
   background-color: #333;
   color: white;
@@ -332,7 +339,7 @@ section {
   padding: 4rem; /* increases padding */
 }
 
-/* button enhancements for desktop interaction */
+/* Button stylings with interactive elements for desktop cursor precision */
 .button {
   padding: 1.5rem 2rem; /* Enlarged padding for better clickability*/
   border-radius: 2rem; /* increases border radius */
