@@ -312,6 +312,8 @@ section {
     max-width: 80%; /* constrained width for better readability */
     font-size: 1.5rem; /* increased font size for better visibility on desktops*/
     margin: 0 auto; /* centers navigation on desktop screens */
+    background-color: #2d3236; /* darker background for better contrast */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* subtle shadow for better separation */
   }
 
   /*Section spacing and visual improvements for desktop */
@@ -338,7 +340,7 @@ section {
 
 /* Experience section with three columns layout for optimal viewing on desktop */
 .experience-section {
-  grid-template-columns: 1fr 1fr 1fr; /* creates balanced three-column layout for wider screens */
+  grid-template-columns: 1fr 1fr 1fr; /* switched experience section to three-column layout for desktop screens */
   gap: 3rem; /*increased spacing between items */
   background-color: #333; /* dark background for better contrast */
   color: white; /*ensures text is visible on dark background */
@@ -369,3 +371,4 @@ img {
   height: auto;
   object-fit: cover;
 } 
+}
