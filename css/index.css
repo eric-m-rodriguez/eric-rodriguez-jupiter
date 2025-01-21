@@ -226,6 +226,7 @@ section {
       padding-top: 1.5rem;
       border-bottom: 2px solid var(--accent-color); /*adds new border to header */
       background-color: #3a3f44; /* gadds new background color to header */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* adds new box shadow to header */
     }
 
   /* Main content spacing adjustments for tablet view */
@@ -252,6 +253,8 @@ section {
       padding: 2rem;
       border-radius: 1.5rem; /* adds new border radius */
       border: 2px solid var(--accent-color); /* adds new border */
+      background-color: var(--light-bg); /*adds new background color */
+      margin: 2rem 0; /* adds new margin */
     }
   }
 
@@ -268,22 +271,23 @@ section {
 
   /* Experience section with two columns layout for optimal viewing on tablet */
   .experience-section {
-    grid-template-columns: 1fr 1fr; /* adjusts grid columns */
-    gap: 2rem; /* adjusts gap */
+    grid-template-columns: 1fr 1fr; /* two columns for medium-sized screens */
+    gap: 2rem; /* moderate spacing between items */
     font-size: 1rem;
     background-color: grey;
     color: black;
     padding: 2rem;
     border-radius: 1rem;
     border: 2.5px solid var(--accent-color); /* adds new border */
+    background-color: var(--secondary-color); /* adds new background color */
   }
 
   /* Button stylings with interactive elements for tablet cursor precision */
 .button {
-  padding: 1rem 2rem; /* adjusts padding */
-  border-radius: 1.25rem; /* adjusts border radius */
+  padding: 1rem 2rem; /* more comfortable touch screen size */
+  border-radius: 1.25rem; /* rounded corners for visual appeal */
   gap: 0.75rem;
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* legible font size for tablets */
   border: 2px solid var(--accent-color);
 }
 
@@ -312,6 +316,8 @@ section {
   section {
     scroll-margin-top: 14rem;
     padding: 3rem;
+    margin-bottom: 4rem; /*increased vertical spacing */
+    font-size: 1.1rem /* increased font size for better readability */
   }
 }
 /* About me section modifications for desktop presentation */
@@ -323,19 +329,19 @@ section {
   color: #212529;
   margin-top: 4rem;
   border-radius: 2rem;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 2); /*increased box shadow for better visibility */
 }
 
 /* Experience section with three columns layout for optimal viewing on desktop */
 .experience-section {
-  grid-template-columns: 1fr 1fr 1fr; /* creates balanced three-column layout */
-  gap: 3rem;
+  grid-template-columns: 1fr 1fr 1fr; /* creates balanced three-column layout for wider screens */
+  gap: 3rem; /*increased spacing between items */
   background-color: #333;
   color: white;
   font-size: 1.25rem;
   border-radius: 2rem;
   border: 1px solid var(--accent-color);
-  transform: scale(1.05);
+  transform: scale(1.05); 
   padding: 4rem; /* increases padding */
 }
 
