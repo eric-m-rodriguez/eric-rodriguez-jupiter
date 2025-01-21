@@ -220,18 +220,33 @@ section {
 
 /* Tablet Styles: Applied for screens 768px and above */
   @media screen and (min-width: 768px) {
+    /* header adjustments for table layout */
     header {
       height: 10rem;
       padding-top: 1.5rem;
       border-bottom: 2px solid var(--accent-color); /*adds new border to header */
       background-color: #3a3f44; /* gadds new background color to header */
     }
-  
+
+  /* Main content spacing adjustments for tablet view */
     main {
       padding-top: 12rem;
       margin: 0 auto;
     }
   
+    /* Navigation adjustments for tablet layout and visibility */
+    nav {
+      flex-direction: row; /* change from column to row layout */
+      max-width: 90%; /* constrains width for tablet screen */
+    }
+
+    /*Addtional nav list item adjustments for tablet layout and visibility */
+    nav ul {
+      flex-direction: row; /* changes from column to row layout */
+      gap: 2rem; /* increases spacing between items */
+    }
+
+    /* Section spacing and visual improvements for tablet */
     section {
       scroll-margin-top: 12rem;
       padding: 2rem;
