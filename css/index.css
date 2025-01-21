@@ -223,6 +223,8 @@ section {
     header {
       height: 10rem;
       padding-top: 1.5rem;
+      border-bottom: 2px solid var(--accent-color); /*adds new border to header */
+      background-color: #3a3f44; /*adds new background color to header */
     }
   
     main {
@@ -233,6 +235,8 @@ section {
     section {
       scroll-margin-top: 12rem;
       padding: 2rem;
+      border-radius: 1.5rem; /* adds new border radius */
+      border: 2px solid var(--accent-color); /* adds new border */
     }
   }
   .about-me-section {
@@ -243,7 +247,7 @@ section {
      color: #212529;
     font-size: 1.2rem;
     border-radius: 1.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /*new box shadow added */
   }
   
   .experience-section {
