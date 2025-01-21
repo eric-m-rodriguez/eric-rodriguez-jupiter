@@ -240,9 +240,8 @@ section {
     }
   }
   .about-me-section {
-    /* .about-me-section section: Adjust padding and margin top */
-    padding: 3rem;
-    margin-top: 3rem;
+    padding: 3rem; /*adjusts padding */
+    margin-top: 3rem; /*adjusts margin top */
     background-color: #d6d8db;
      color: #212529;
     font-size: 1.2rem;
@@ -251,20 +250,19 @@ section {
   }
   
   .experience-section {
-    /* .experience-section section: Adjust grid-template-columns, gap */
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr; /*adjusts grid columns */
+    gap: 2rem; /*adjusts gap */
     font-size: 1rem;
     background-color: grey;
     color: black;
     padding: 2rem;
     border-radius: 1rem;
+    border: 2.5px solid var(--accent-color); /*adds new border */
   }
 
 .button {
-  /* .button: Adjust padding, border-radius */
-  padding: 1rem 2rem;
-  border-radius: 1.25rem;
+  padding: 1rem 2rem; /*adjusts padding */
+  border-radius: 1.25rem; /*adjusts border radius */
   gap: 0.75rem;
   font-size: 1.5rem;
   border: 2px solid var(--accent-color);
@@ -289,10 +287,9 @@ section {
 }
 
 .about-me-section {
-  /* Adjust padding and font-size */
-  padding: 5rem;
+  padding: 5rem; /*adjusts padding */
   margin-top: 4rem;
-  font-size: 1.75rem;
+  font-size: 1.75rem; /*adjusts font size */
   background-color: #d6d8db;
   color: #212529;
   margin-top: 4rem;
@@ -301,8 +298,7 @@ section {
 }
 
 .experience-section {
-  /* Adjust grid-template-columns, padding */
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr; /*adjusts grid columns */
   gap: 3rem;
   background-color: #333;
   color: white;
@@ -310,15 +306,14 @@ section {
   border-radius: 2rem;
   border: 1px solid var(--accent-color);
   transform: scale(1.05);
-  padding: 4rem;
+  padding: 4rem; /*adjusts padding */
 }
 
 .button {
-  /* Adjust padding and font-size */
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 2rem; /*adjusts padding */
   border-radius: 2rem;
   gap: 1.25rem;
-  font-size: 1.75rem;
+  font-size: 1.75rem; /*adjusts font size */
   border: 2px solid var(--accent-color);
 }
 
