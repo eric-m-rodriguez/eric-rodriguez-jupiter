@@ -85,14 +85,14 @@ h2 {
 header {
   background-color: var(--primary-color); /*Style for branding */
   color: #ffffff;
-  padding: 1rem 0;
-  text-align: center; /* improved readability */
+  padding: 2rem 1rem; /* increased padding for better spacing */
+  text-align: center; /* aligns text centrally */
   margin: 0;
   width: 100%;
   position: fixed;
   height: var(--heading-height);
   z-index: 1;
-  border-bottom: 1px solid var(--nav-border-color);
+  border-bottom: 2px solid var(--accent-color); /*adds a visible border */
 }
 
 main {
@@ -107,11 +107,13 @@ nav {
   display: flex; /* changed from block to flex to create flexible layout as default style */
   flex-direction: column; /* stack items vertically as default style */
   justify-content: center; /* centers items vertically */
-  padding: 1rem 0; /* spacing for better clickability */
+  gap: 1.5rem; /* increases spacing between items */
+  padding: 2rem 1rem; /* spacing for better clickability */
   background-color: var(--primary-color); /*matches header branding */
   border: 1px solid var(--nav-border-color); /*creates subtle border */
-  border-radius: 4px; /*rounds corners for visual appeal */
+  border-radius: 8px; /*rounds corners for visual appeal */
   margin-top: 0.5rem; /* adds margin for better spacing from other elements*/
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds a shadow for emphasis */
 }
 
 nav ul {
@@ -137,6 +139,7 @@ nav a:focus {
   background-color: var(--accent-color);
   color: #ffffff;
   text-decoration: none;
+  transform: scale(1.05); /* scales item on hover for better feedback */
 }
 section {
   scroll-margin-top: var(--section-margin-top-sm);
@@ -148,9 +151,11 @@ section {
   display: block;
   padding: 2rem; /* padding for content spacing for default style */
   background-color: var(--light-bg); /* background color for better contrast */
+  border: 2px solid var(--accent-color); /* border for better separation */
   border-radius: 8px; /* rounded corners for visual appeal */
   margin-top: 2rem; /*space above section for better separation */
   text-align: center; /* center text for better readability */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a shadow for emphasis */
   color: var(--text-color); /*default text color */
 }
 
