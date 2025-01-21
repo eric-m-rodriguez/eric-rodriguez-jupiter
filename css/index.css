@@ -83,6 +83,7 @@ h2 {
 }
 
 header {
+  /* Primary header color used for branding consistency */
   background-color: var(--primary-color); /*Style for branding */
   color: #ffffff;
   padding: 2rem 1rem; /* increased padding for better spacing */
@@ -148,6 +149,7 @@ section {
 }
 
 .about-me-section {
+  /*light background color for better contrast with dark text*/
   display: block;
   padding: 2rem; /* padding for content spacing for default style */
   background-color: var(--light-bg); /* background color for better contrast */
@@ -232,8 +234,8 @@ section {
     header {
       height: 10rem;
       padding-top: 1.5rem;
-      border-bottom: 2px solid var(--accent-color); /*adds new border to header */
-      background-color: #3a3f44; /* gadds new background color to header */
+      border-bottom: 3px solid var(--accent-color); /*adds new border to header */
+      background-color: var(--dark-bg); /* darker color for tablets */
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* adds new box shadow to header */
     }
 
@@ -247,6 +249,8 @@ section {
     nav {
       flex-direction: row; /* change from column to row layout */
       max-width: 90%; /* constrains width for tablet screen */
+      padding: 1.5rem; /* adjusts padding for better clickability */
+      background-color: var(--secondary-color); /* new background color for distinct style from desktop styles */
     }
 
     /*Addtional nav list item adjustments for tablet layout and visibility */
@@ -270,11 +274,12 @@ section {
   .about-me-section {
     padding: 3rem; /* adjusts padding */
     margin-top: 3rem; /* adjusts margin top */
-    background-color: #d6d8db;
+    background-color: var(--light-bg); /*light background color for contract on tablets */
      color: #212529;
     font-size: 1.2rem;
     border-radius: 1.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* new box shadow added */
+    text-align: left; /*align text to the left for tablets */
   }
 
   /* Switched to a two-column grid layout for better readability on tablets */
@@ -307,7 +312,10 @@ section {
     padding-top: 2rem;
     background-color: #2d3236; /* darker background for desktop distinction */
     text-align: center; /* centers text for better readability */
+    font-size: 2rem; /* increased font size for better visibility on desktops */
+    color: var(--dark-text); /* dark text color for better contrast on desktop */
   }
+
 /*Main content spacing adjustments for desktop view */
   main {
     padding-top: 14rem;
@@ -317,12 +325,13 @@ section {
 
   /*Navigation adjustments for enhanced desktop interaction */
   nav {
-    padding: 2rem 0; /* increased padding for better clickability */
+    padding: 2rem 3rem; /* increased padding for desktop */
     max-width: 80%; /* constrained width for better readability */
     font-size: 1.5rem; /* increased font size for better visibility on desktops*/
     margin: 0 auto; /* centers navigation on desktop screens */
     background-color: #2d3236; /* darker background for better contrast */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* subtle shadow for better separation */
+    border-radius: 12px; /*rounds corner on desktop */
   }
 
   /*Section spacing and visual improvements for desktop */
@@ -340,11 +349,11 @@ section {
   padding: 5rem; /* increases padding for better content spacing*/
   margin-top: 4rem;
   font-size: 1.75rem; /* larger font for desktop viewing */
-  background-color: #d6d8db;
+  background-color: var(--dark-bg); /* dark background for better contrast on desktop */
   color: #212529;
   margin-top: 4rem;
   border-radius: 2rem;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 2); /*increased box shadow for better visibility */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, .3); /*increased box shadow for better visibility on desktop */
 }
 
 /* Experience section with three columns layout for optimal viewing on desktop */
