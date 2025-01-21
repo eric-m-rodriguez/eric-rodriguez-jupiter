@@ -298,6 +298,7 @@ section {
     height: 12rem;
     padding-top: 2rem;
     background-color: #2d3236; /* darker background for desktop distinction */
+    text-align: center; /* centers text for better readability */
   }
 /*Main content spacing adjustments for desktop view */
   main {
