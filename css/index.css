@@ -104,13 +104,14 @@ main {
 }
 
 nav {
-  display: flex; 
+  display: flex; /* changed from block to flex to create flexible layout as default style */
   justify-content: center;
   padding: 1rem 0;
   background-color: var(--primary-color); 
   border: 1px solid var(--nav-border-color);
   border-radius: 4px;
   margin-top: 0.5rem;
+  flex-direction: column; /* stack items vertically as default style */
 }
 
 nav ul {
@@ -145,11 +146,11 @@ section {
 
 .about-me-section {
   display: block;
-  padding: 2rem;
+  padding: 2rem; /* padding for content spacing for default style */
   background-color: var(--light-bg);
   border-radius: 8px;
   margin-top: 2rem;
-  text-align: center;
+  text-align: center; /* center text for better readability */
   color: var(--text-color);
 }
 
@@ -220,7 +221,7 @@ section {
   margin: 2rem 0;
 }
 
-/* Tablet Styles: Applied for screens 768px and above */
+/* Tablet Styles: Adjusts layout and spacing for screens 768px and above */
   @media screen and (min-width: 768px) {
     /* header adjustments for tablet layout */
     header {
@@ -271,7 +272,7 @@ section {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* new box shadow added */
   }
 
-  /* Experience section with two columns layout for optimal viewing on tablet */
+  /* Switched to a two-column grid layout for better readability on tablets */
   .experience-section {
     grid-template-columns: 1fr 1fr; /* two columns for medium-sized screens */
     gap: 2rem; /* moderate spacing between items */
