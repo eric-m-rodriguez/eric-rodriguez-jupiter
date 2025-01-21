@@ -329,11 +329,17 @@ section {
     max-width: 80%; /* constrained width for better readability */
     font-size: 1.5rem; /* increased font size for better visibility on desktops*/
     margin: 0 auto; /* centers navigation on desktop screens */
-    background-color: #2d3236; /* darker background for better contrast */
+    background-color: var(--dark-bg); /* darker background for better contrast */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* subtle shadow for better separation */
     border-radius: 12px; /*rounds corner on desktop */
+    border-top: 2px solid var(--accent-color); /* adds a top border for desktop */
+    text-align: center; /* centers text for better readability */
   }
 
+  
+nav a:hover {
+  color: var(--highlight-color); /* Change link color on hover for desktop */
+}
   /*Section spacing and visual improvements for desktop */
   section {
     scroll-margin-top: 14rem;
