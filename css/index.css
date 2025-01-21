@@ -105,20 +105,20 @@ main {
 
 nav {
   display: flex; /* changed from block to flex to create flexible layout as default style */
-  justify-content: center;
-  padding: 1rem 0;
-  background-color: var(--primary-color); 
-  border: 1px solid var(--nav-border-color);
-  border-radius: 4px;
-  margin-top: 0.5rem;
   flex-direction: column; /* stack items vertically as default style */
+  justify-content: center; /* centers items vertically */
+  padding: 1rem 0; /* spacing for better clickability */
+  background-color: var(--primary-color); /*matches header branding */
+  border: 1px solid var(--nav-border-color); /*creates subtle border */
+  border-radius: 4px; /*rounds corners for visual appeal */
+  margin-top: 0.5rem; /* adds margin for better spacing from other elements*/
 }
 
 nav ul {
-  display: flex; /* changed from block to flex to create flexible layout as default style */
-  flex-direction: column; /* stack items vertically as default style */
-  align-items: center;
-  gap: 1rem;
+  display: flex; /* enables flex layout */
+  flex-direction: column; /* stack navigation links vertically */
+  align-items: center; /* centers items horizontally */
+  gap: 1rem; /*adds spacing between items */
 }
 
 nav a {
@@ -147,11 +147,11 @@ section {
 .about-me-section {
   display: block;
   padding: 2rem; /* padding for content spacing for default style */
-  background-color: var(--light-bg);
-  border-radius: 8px;
-  margin-top: 2rem;
+  background-color: var(--light-bg); /* background color for better contrast */
+  border-radius: 8px; /* rounded corners for visual appeal */
+  margin-top: 2rem; /*space above section for better separation */
   text-align: center; /* center text for better readability */
-  color: var(--text-color);
+  color: var(--text-color); /*default text color */
 }
 
 .experience-section {
@@ -298,7 +298,7 @@ section {
 @media screen and (min-width: 1024px) {
   /* header adjustments for improved visibility and spacing */
   header {
-    height: 12rem;
+    height: 12rem; 
     padding-top: 2rem;
     background-color: #2d3236; /* darker background for desktop distinction */
     text-align: center; /* centers text for better readability */
