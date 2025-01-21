@@ -310,6 +310,8 @@ section {
   nav {
     padding: 2rem 0; /* increased padding for better clickability */
     max-width: 80%; /* constrained width for better readability */
+    font-size: 1.5rem; /* increased font size for better visibility on desktops*/
+    margin: 0 auto; /* centers navigation on desktop screens */
   }
 
   /*Section spacing and visual improvements for desktop */
@@ -317,9 +319,11 @@ section {
     scroll-margin-top: 14rem;
     padding: 3rem;
     margin-bottom: 4rem; /*increased vertical spacing */
-    font-size: 1.1rem /* increased font size for better readability */
+    font-size: 1.1rem; /* increased font size for better readability */
+    background-color: #f0f0f0; /* light background for better contrast */
+    border: 1px solid #ccc; /* subtle border for better separation */
   }
-}
+
 /* About me section modifications for desktop presentation */
 .about-me-section {
   padding: 5rem; /* increases padding for better content spacing*/
@@ -336,13 +340,13 @@ section {
 .experience-section {
   grid-template-columns: 1fr 1fr 1fr; /* creates balanced three-column layout for wider screens */
   gap: 3rem; /*increased spacing between items */
-  background-color: #333;
-  color: white;
-  font-size: 1.25rem;
-  border-radius: 2rem;
-  border: 1px solid var(--accent-color);
-  transform: scale(1.05); 
-  padding: 4rem; /* increases padding */
+  background-color: #333; /* dark background for better contrast */
+  color: white; /*ensures text is visible on dark background */
+  font-size: 1.25rem; /*larger font size for better readability */
+  border-radius: 2rem; /* rounded corners for visual appeal */
+  border: 1px solid var(--accent-color); /*accent border for consistency */
+  transform: scale(1.05); /*slight scaling emphasis */
+  padding: 4rem; /* increases padding for better spacing*/
 }
 
 /* Button stylings with interactive elements for desktop cursor precision */
