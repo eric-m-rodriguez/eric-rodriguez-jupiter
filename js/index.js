@@ -28,5 +28,5 @@ for (let i = 0; i <skills.length; i++) {    /*iterates through skills array*/
 
     skill.innerText = skills[i]; /*selects inner text of list item*/
 
-    skillsSection.appendChild(skill); /*appends list item to skills section*/
+    skillsList.appendChild(skill); /*appends list item to skills section*/
 };
