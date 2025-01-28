@@ -197,6 +197,14 @@ section {
   line-height: 1.6;
 }
 
+#skills li {
+  display: flex; /* enables flex layout */
+  justify-content: space-between; /* evenly spaces items */
+  padding: 0.5rem; /* padding for better spacing */
+  border: 1px solid var(--secondary-color); /* border for better separation */
+  border-radius: 8px; /* rounded corners for visual appeal */
+  background-color: rgba(255, 255, 255, 0.05);
+}  
 .button {
   background-color: var(--secondary-color);
   color: #ffffff;
@@ -295,6 +303,14 @@ section {
     background-color: var(--secondary-color); /* adds new background color */
   }
 
+  /* Skills list item adjustments for tablet layout */
+  #skills li {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  
+  }  
   /* Button stylings with interactive elements for tablet cursor precision */
 .button {
   padding: 1rem 2rem; /* more comfortable touch screen size */
@@ -375,6 +391,13 @@ nav a:hover {
   padding: 4rem; /* increases padding for better spacing*/
 }
 
+#skills li {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+  
 /* Button stylings with interactive elements for desktop cursor precision */
 .button {
   padding: 1.5rem 2rem; /* Enlarged padding for better clickability*/
