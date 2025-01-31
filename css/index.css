@@ -1,6 +1,7 @@
-/* =========== Reset & Global Styles */
+/* Reset & Global Styles */
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
+/* Mobile Styles: Applied to mobile devices smaller than 768px (default style */
 :root {
   /* Color Palette */
   --primary-color: #343a40;
@@ -10,50 +11,25 @@
   --text-color: #212529;
   --footer-bg: #212529;
   --nav-border-color: rgba(255, 255, 255, 0.1);
-  
-  /* Dark Mode Colors */
   --dark-bg: #121212;
   --dark-text: #ffffff;
   --dark-secondary: #333333;
   --dark-accent: #2196f3;
-  
-  /* Font Sizes */
-  --base-font-size: 100%;
-  --header-font-size: 2.5rem;
-  --subheader-font-size: 1.75rem;
-  --text-font-size: 1rem;
-  
-  /* Spacing */
-  --section-padding: 2rem;
-  --content-width: 90%;
-  --max-content-width: 1200px;
-  --heading-height: 12rem;
-}
 
-/* Dark Mode Styles */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: var(--dark-bg);
-    color: var(--dark-text);
+    /* Spacing & Sizing */
+    --header-height-sm: 8rem;
+    --header-height-md: 10rem;
+    --header-height-lg: 12rem;
+    --header-padding-sm: 1rem;
+    --header-padding-md: 1.5rem;
+    --header-padding-lg: 2rem;
+    --main-padding-top-sm: 10rem;
+    --main-padding-top-md: 12rem;
+    --main-padding-top-lg: 14rem;
+    --section-margin-top-sm: 10rem;
+    --section-margin-top-md: 12rem;
+    --section-margin-top-lg: 14rem;
   }
-  
-  h1, h2 {
-    color: var(--dark-text);
-  }
-  
-  .experience-item {
-    border-color: var(--dark-secondary);
-  }
-  
-  .button {
-    background-color: var(--dark-secondary);
-    color: var(--dark-text);
-  }
-  
-  header, footer {
-    background-color: var(--dark-secondary);
-  }
-}
 
 body {
   font-family: "Nunito", sans-serif;
@@ -64,7 +40,6 @@ body {
   line-height: 1.6;
 }
 
-/* Improved Accessibility for Links */
 a {
   color: var(--accent-color);
   text-decoration: none;
@@ -78,19 +53,19 @@ a:focus {
   outline-offset: 2px;
 }
 
-/* Remove default list styling */
 ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-/* Typography with improved hierarchy */
 h1 {
   font-size: var(--header-font-size);
-  color: var(--primary-color);
-  text-align: center;
-  cursor: pointer; /* Added for H1 home link */
+  color: #ffffff;
+  cursor: pointer;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 800;
 }
 
 h1 a {
@@ -104,20 +79,21 @@ h2 {
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--accent-color);
+  text-align: center;
 }
 
-/* Layout Components */
 header {
-  background-color: var(--primary-color);
+  /* Primary header color used for branding consistency */
+  background-color: var(--primary-color); /*Style for branding */
   color: #ffffff;
-  padding: 1.5rem 0;
-  text-align: center;
+  padding: 2rem 1rem; /* increased padding for better spacing */
+  text-align: center; /* aligns text centrally */
   margin: 0;
   width: 100%;
   position: fixed;
   height: var(--heading-height);
-  z-index: 1000;
-  border-bottom: 1px solid var(--nav-border-color);
+  z-index: 1;
+  border-bottom: 2px solid var(--accent-color); /*adds a visible border */
 }
 
 main {
@@ -125,24 +101,27 @@ main {
   max-width: var(--max-content-width);
   margin: 0 auto;
   padding: var(--section-padding);
-  padding-top: calc(var(--heading-height) + 2rem);
+  padding-top: var(--main-padding-top-sm);
 }
 
-/* Navigation with improved accessibility */
 nav {
-  display: flex;
-  justify-content: center;
-  padding: 1rem 0;
-  background-color: var(--primary-color);
-  border: 1px solid var(--nav-border-color);
-  border-radius: 4px;
-  margin-top: 1rem;
+  display: flex; /* changed from block to flex to create flexible layout as default style */
+  flex-direction: column; /* stack items vertically as default style */
+  justify-content: center; /* centers items vertically */
+  gap: 1.5rem; /* increases spacing between items */
+  padding: 2rem 1rem; /* spacing for better clickability */
+  background-color: var(--primary-color); /*matches header branding */
+  border: 1px solid var(--nav-border-color); /*creates subtle border */
+  border-radius: 8px; /*rounds corners for visual appeal */
+  margin-top: 0.5rem; /* adds margin for better spacing from other elements*/
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds a shadow for emphasis */
 }
 
 nav ul {
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+  display: flex; /* enables flex layout */
+  flex-direction: column; /* stack navigation links vertically */
+  align-items: center; /* centers items horizontally */
+  gap: 1rem; /*adds spacing between items */
 }
 
 nav a {
@@ -151,6 +130,9 @@ nav a {
   border-radius: 4px;
   background-color: transparent;
   transition: background-color 0.3s ease;
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
 }
 
 nav a:hover,
@@ -158,13 +140,31 @@ nav a:focus {
   background-color: var(--accent-color);
   color: #ffffff;
   text-decoration: none;
+  transform: scale(1.05); /* scales item on hover for better feedback */
+}
+section {
+  scroll-margin-top: var(--section-margin-top-sm);
+  padding: 1rem; /* padding for content spacing for default style */
+  margin: 1rem; /* margin for content spacing for default style */;
 }
 
-/* Experience Section with improved layout */
+.about-me-section {
+  /*light background color for better contrast with dark text*/
+  display: block;
+  padding: 2rem; /* padding for content spacing for default style */
+  background-color: var(--light-bg); /* background color for better contrast */
+  border: 2px solid var(--accent-color); /* border for better separation */
+  border-radius: 8px; /* rounded corners for visual appeal */
+  margin-top: 2rem; /*space above section for better separation */
+  text-align: center; /* center text for better readability */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a shadow for emphasis */
+  color: var(--text-color); /*default text color */
+}
+
 .experience-section {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: 1fr;
+  gap: 1rem;
   padding: var(--section-padding);
 }
 
@@ -172,10 +172,11 @@ nav a:focus {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 1.5rem;
+  padding: 1rem;
   border: 1px solid var(--secondary-color);
   border-radius: 8px;
   background-color: rgba(255, 255, 255, 0.05);
+  margin: 0.5rem 0;
 }
 
 .job-info {
@@ -187,6 +188,8 @@ nav a:focus {
 .job-title {
   font-weight: bold;
   color: var(--accent-color);
+  font-size: 1.1rem;
+  text-align: center;
 }
 
 .job-description {
@@ -194,7 +197,6 @@ nav a:focus {
   line-height: 1.6;
 }
 
-/* Button Styles with improved accessibility */
 .button {
   background-color: var(--secondary-color);
   color: #ffffff;
@@ -206,6 +208,9 @@ nav a:focus {
   gap: 0.5rem;
   transition: all 0.3s ease;
   text-decoration: none;
+  width: 100%;
+  justify-content: center;
+  font-size: 1.1rem;
 }
 
 .button:hover,
@@ -218,50 +223,176 @@ nav a:focus {
 
 .button-container {
   display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1rem;
   margin: 2rem 0;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-  :root {
-    --header-font-size: 2rem;
-    --subheader-font-size: 1.5rem;
-    --heading-height: 10rem;
+/* Tablet Styles: Adjusts layout and spacing for screens 768px and above */
+  @media screen and (min-width: 768px) {
+    /* header adjustments for tablet layout */
+    header {
+      height: 10rem;
+      padding-top: 1.5rem;
+      border-bottom: 3px solid var(--accent-color); /*adds new border to header */
+      background-color: var(--dark-bg); /* darker color for tablets */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* adds new box shadow to header */
+    }
+
+  /* Main content spacing adjustments for tablet view */
+    main {
+      padding-top: 12rem;
+      margin: 0 auto;
+    }
+  
+    /* Navigation adjustments for tablet layout and visibility */
+    nav {
+      flex-direction: row; /* change from column to row layout */
+      max-width: 90%; /* constrains width for tablet screen */
+      padding: 1.5rem; /* adjusts padding for better clickability */
+      background-color: var(--secondary-color); /* new background color for distinct style from desktop styles */
+    }
+
+    /*Addtional nav list item adjustments for tablet layout and visibility */
+    nav ul {
+      flex-direction: row; /* changes from column to row layout */
+      gap: 2rem; /* increases spacing between items */
+    }
+
+    /* Section spacing and visual improvements for tablet */
+    section {
+      scroll-margin-top: 12rem;
+      padding: 2rem;
+      border-radius: 1.5rem; /* adds new border radius */
+      border: 2px solid var(--accent-color); /* adds new border */
+      background-color: var(--light-bg); /*adds new background color */
+      margin: 2rem 0; /* adds new margin */
+    }
   }
 
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+  /* About me section modifications for tablet presentation */
+  .about-me-section {
+    padding: 3rem; /* adjusts padding */
+    margin-top: 3rem; /* adjusts margin top */
+    background-color: var(--light-bg); /*light background color for contract on tablets */
+     color: #212529;
+    font-size: 1.2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* new box shadow added */
+    text-align: left; /*align text to the left for tablets */
   }
 
+  /* Switched to a two-column grid layout for better readability on tablets */
   .experience-section {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr; /* two columns for medium-sized screens */
+    gap: 2rem; /* moderate spacing between items */
+    font-size: 1rem;
+    background-color: grey;
+    color: black;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 2.5px solid var(--accent-color); /* adds new border */
+    background-color: var(--secondary-color); /* adds new background color */
   }
 
-  .button-container {
-    flex-direction: column;
-    align-items: center;
-  }
+  /* Button stylings with interactive elements for tablet cursor precision */
+.button {
+  padding: 1rem 2rem; /* more comfortable touch screen size */
+  border-radius: 1.25rem; /* rounded corners for visual appeal */
+  gap: 0.75rem;
+  font-size: 1.5rem; /* legible font size for tablets */
+  border: 2px solid var(--accent-color);
 }
 
-/* Accessibility - Tab Focus Styles */
+/* Desktop Styles: Applied for screens 1024px and above */
+@media screen and (min-width: 1024px) {
+  /* header adjustments for improved visibility and spacing */
+  header {
+    height: 12rem; 
+    padding-top: 2rem;
+    background-color: #2d3236; /* darker background for desktop distinction */
+    text-align: center; /* centers text for better readability */
+    font-size: 2rem; /* increased font size for better visibility on desktops */
+    color: var(--dark-text); /* dark text color for better contrast on desktop */
+  }
+
+/*Main content spacing adjustments for desktop view */
+  main {
+    padding-top: 14rem;
+    margin: 0 auto;
+    max-width: 1200px; /* constrained width for optimal desktop readability */
+  }
+
+  /*Navigation adjustments for enhanced desktop interaction */
+  nav {
+    padding: 2rem 3rem; /* increased padding for desktop */
+    max-width: 80%; /* constrained width for better readability */
+    font-size: 1.5rem; /* increased font size for better visibility on desktops*/
+    margin: 0 auto; /* centers navigation on desktop screens */
+    background-color: var(--dark-bg); /* darker background for better contrast */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* subtle shadow for better separation */
+    border-radius: 12px; /*rounds corner on desktop */
+    border-top: 2px solid var(--accent-color); /* adds a top border for desktop */
+    text-align: center; /* centers text for better readability */
+  }
+
+  
+nav a:hover {
+  color: var(--highlight-color); /* Change link color on hover for desktop */
+}
+  /*Section spacing and visual improvements for desktop */
+  section {
+    scroll-margin-top: 14rem;
+    padding: 3rem;
+    margin-bottom: 4rem; /*increased vertical spacing */
+    font-size: 1.1rem; /* increased font size for better readability */
+    background-color: #f0f0f0; /* light background for better contrast */
+    border: 1px solid #ccc; /* subtle border for better separation */
+  }
+
+/* About me section modifications for desktop presentation */
+.about-me-section {
+  padding: 5rem; /* increases padding for better content spacing*/
+  margin-top: 4rem;
+  font-size: 1.75rem; /* larger font for desktop viewing */
+  background-color: var(--dark-bg); /* dark background for better contrast on desktop */
+  color: #212529;
+  margin-top: 4rem;
+  border-radius: 2rem;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, .3); /*increased box shadow for better visibility on desktop */
+}
+
+/* Experience section with three columns layout for optimal viewing on desktop */
+.experience-section {
+  grid-template-columns: 1fr 1fr 1fr; /* switched experience section to three-column layout for desktop screens */
+  gap: 3rem; /*increased spacing between items */
+  background-color: #333; /* dark background for better contrast */
+  color: white; /*ensures text is visible on dark background */
+  font-size: 1.25rem; /*larger font size for better readability */
+  border-radius: 2rem; /* rounded corners for visual appeal */
+  border: 1px solid var(--accent-color); /*accent border for consistency */
+  transform: scale(1.05); /*slight scaling emphasis */
+  padding: 4rem; /* increases padding for better spacing*/
+}
+
+/* Button stylings with interactive elements for desktop cursor precision */
+.button {
+  padding: 1.5rem 2rem; /* Enlarged padding for better clickability*/
+  border-radius: 2rem; /* increases border radius */
+  gap: 1.25rem; /* increases gap */
+  font-size: 1.75rem; /* Increased font size for better readability*/
+  border: 2px solid var(--accent-color);
+}
+
+/* Accessibility Styles */
 *:focus-visible {
   outline: 3px solid var(--accent-color);
   outline-offset: 2px;
 }
 
-/* Ensure sections clear fixed header */
-section {
-  scroll-margin-top: calc(var(--heading-height) + 1rem);
-}
-
-/* Image Handling */
 img {
   max-width: 100%;
   height: auto;
   object-fit: cover;
+} 
 }
