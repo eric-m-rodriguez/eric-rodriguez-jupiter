@@ -30,3 +30,20 @@ for (let i = 0; i <skills.length; i++) {    /*iterates through skills array*/
 
     skillsList.appendChild(skill); /*appends list item to skills section*/
 };
+
+const messageForm = document.forms["leave_message"]; /*selects leave message form*/
+
+/*Retrieves values from form input fields*/
+messageForm.addEventListener("submit", function(event) {/*adds events listener to form*/
+
+    event.preventDefault(); /*prevents from reloading page before logging to console*/
+
+    const usersName = event.target.usersName.value; /*creates variable for user name*/
+    const usersEmail = event.target.usersEmail.value; /*creates variable for user email*/
+    const usersMessage = event.target.usersMessage.value; /*creates variable for user message*/
+
+    console.log("Name:", usersName); /*logs user name to console*/
+    console.log("Email:", usersEmail); /*logs user email to console*/
+    console.log("Message:", usersMessage); /*logs user message to console log*/
+});
+
