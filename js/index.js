@@ -45,5 +45,42 @@ messageForm.addEventListener("submit", function(event) {/*adds events listener t
     console.log("Name:", usersName); /*logs user name to console*/
     console.log("Email:", usersEmail); /*logs user email to console*/
     console.log("Message:", usersMessage); /*logs user message to console log*/
+
+    const messageSection = document.querySelector("#messages"); /*selects messages section*/
+    const messageList = messageSection.querySelector("ul"); /*selects unordered list in message section*/
+    const newMessage = document.createElement("li"); /*creates list item element*/
+
+    const userLink = document.createElement("a"); /*creates <a> element*/
+
+    userLink.href = `mailto:${usersEmail}`; /*sets href attribute of <a> element*/
+    userLink.textContent =usersName; /*sets visible text content of <a> element* as user's name*/
+
+    const messageText = document.createElement("span"); /*creates span element*/
+   
+    messageText.textContent = `{usersMessage}`; /*sets text of span element as user's message*/
+
+    newMessage.appendChild(userLink); /*appends <a> element to list item*/
+    newMessage.appendChild(messageText); /*appends span element to list item*/
+
+/*creates "Remove" button for each message*/
+    const removeButton = document.createElement("button"); /*creates button element*/
+    removeButton.textContent = "Remove"; /*sets text content of button element to "Remove"*/
+    removeButton.type = "button"; /*sets type attribute of button element to "button"*/
+
+/*adds event listener to "Remove" button*/
+    removeButton.addEventListener("click", function() {
+
+        const entry = removeButton.parentNode; /*creates variable for parent node of button*/
+        entry.removes(); /*removes message from DOM*/
+    });
+
+/*appends list item to unordered list in messages section*/
+    newMessage.appendChild(removeButton); /*appends "Remove" button to list item*/
+    messageList.appendChild(newMessage); /*appends list item to unordered list*/
+
+
+
+   
+    messageForm.reset(); /*resets form input fields*/
 });
 
