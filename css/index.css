@@ -47,7 +47,6 @@ form {
   background-color: var(--light-bg); /* light background for better contrast */
   border-radius: 8px; /* rounded corners for visual appeal */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /*subtle shadow for emphasis */
-  ;
 }
 
 input, textarea {
