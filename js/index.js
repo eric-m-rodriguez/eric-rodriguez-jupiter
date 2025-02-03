@@ -57,7 +57,7 @@ messageForm.addEventListener("submit", function(event) {/*adds events listener t
 
     const messageText = document.createElement("span"); /*creates span element*/
    
-    messageText.textContent = `{usersMessage}`; /*sets text of span element as user's message*/
+    messageText.textContent = usersMessage; /*sets text of span element as user's message*/
 
     newMessage.appendChild(userLink); /*appends <a> element to list item*/
     newMessage.appendChild(messageText); /*appends span element to list item*/
@@ -71,7 +71,7 @@ messageForm.addEventListener("submit", function(event) {/*adds events listener t
     removeButton.addEventListener("click", function() {
 
         const entry = removeButton.parentNode; /*creates variable for parent node of button*/
-        entry.removes(); /*removes message from DOM*/
+        entry.remove(); /*removes message from DOM*/
     });
 
 /*appends list item to unordered list in messages section*/
