@@ -57,7 +57,7 @@ input, textarea {
   border: 1px solid #121212; /* adds border for better separation */
   border-radius: 4px; /*rounded corners for visual appeal */
   font-size: 1rem; /* default font size for better readability */
-  background-color: var(--background-color); /* default background color */
+  background-color: var(--light-bg); /* default background color */
   color: var(--textColor); /* sets default text color */
 }
 
