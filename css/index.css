@@ -40,6 +40,31 @@ body {
   line-height: 1.6;
 }
 
+form { 
+  margin: 2rem auto; /* centers form on page */
+  max-width: 600px; /* constrains form width */
+  padding: 5rem; /* adds padding for better spacing */
+  background-color: var(--light-bg); /* light background for better contrast */
+  border-radius: 8px; /* rounded corners for visual appeal */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /*subtle shadow for emphasis */
+}
+
+input, textarea {
+  width: 100%; /* expands input fields to full width for touch/tap accessibikity */
+  padding: 1rem; /* adds padding for better spacing */
+  margin-bottom: 1.5rem; /* adds margin bottom for better spacing */
+  border: 1px solid #121212; /* adds border for better separation */
+  border-radius: 4px; /*rounded corners for visual appeal */
+  font-size: 1rem; /* default font size for better readability */
+  background-color: var(--light-bg); /* default background color */
+  color: var(--text-color); /* sets default text color */
+}
+
+input:focus, textarea:focus {
+  outline: 2px solid var(--accent-color); /* adds focus outline for better visibility */
+  border-color: var(--accent-color); /* changes border color on focus for better visibility */
+}
+
 a {
   color: var(--accent-color);
   text-decoration: none;
@@ -209,6 +234,7 @@ justify-content: space-between; /* evenly spaces items */
   border-radius: 8px; /* rounded corners for visual appeal */
   background-color: rgba(255, 255, 255, 0.05);
 }  
+
 .button {
   background-color: var(--secondary-color);
   color: #ffffff;
@@ -256,7 +282,12 @@ justify-content: space-between; /* evenly spaces items */
       padding-top: 12rem;
       margin: 0 auto;
     }
-  
+  /* Adjusts input and textarea fields for better tablet presentation */
+    input, textarea {
+      font-size: 1.1 rem; /*increased font size for better readability */
+      padding: 1.25rem; 
+    }
+
     /* Navigation adjustments for tablet layout and visibility */
     nav {
       flex-direction: row; /* change from column to row layout */
@@ -349,6 +380,12 @@ justify-content: space-between; /* evenly spaces items */
     max-width: 1200px; /* constrained width for optimal desktop readability */
   }
 
+/* Adjusts input and textarea fields for better desktop presentation */
+input, textarea {
+  font-size: 1.75rem; /* increased font size for better readability on desktops */
+  padding: 1.5 rem; /* increased padding for better spacing */
+}
+
   /*Navigation adjustments for enhanced desktop interaction */
   nav {
     padding: 2rem 3rem; /* increased padding for desktop */
@@ -362,7 +399,6 @@ justify-content: space-between; /* evenly spaces items */
     text-align: center; /* centers text for better readability */
   }
 
-  
 nav a:hover {
   color: var(--highlight-color); /* Change link color on hover for desktop */
 }
