@@ -84,3 +84,32 @@ messageForm.addEventListener("submit", function(event) {/*adds events listener t
     messageForm.reset(); /*resets form input fields*/
 });
 
+/* Fetch API */
+let githubUsername = 'eric-m-rodriguez'; /*creates variable for GitHub username*/
+
+let githubUrl = `https://api.github.com/users/${githubUsername}/repos`; /*creates variable for GitHub URL*/
+
+fetch (githubUrl) /*fetches data from GitHub API*/
+    .then(response => response.json()) /*parses response as JSON*/
+    .then(repositories => {
+        console.log(repositories); /*logs repos to console*/  
+    
+        const projectSection =document.querySelector('#projects'); /*selects project section */
+
+        const projectList =projectSection.querySelector('ul'); /*selects unordered list in project section*/
+
+        /* Loops through respositories array and displays each item as a list item */
+    
+        for (let i = 0; i <repositories.length; i++) {
+            const project = document.createElement('li'); /*creates list element*/
+            project.innerText = repositories[i].name; /*sets inner text of list element*/
+            projectList.appendChild(project); /*appends list element to project section*/
+        }
+    })
+    
+    .catch (error => 
+        console.error("Error", error.message)); /*logs error message to the console */
+
+
+    
+    

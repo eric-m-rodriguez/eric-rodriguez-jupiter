@@ -1,5 +1,5 @@
 /* Reset & Global Styles */
-@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&display=swap");
 
 /* Mobile Styles: Applied to mobile devices smaller than 768px (default style */
 :root {
@@ -15,14 +15,16 @@
   --dark-text: #ffffff;
   --dark-secondary: #333333;
   --dark-accent: #2196f3;
+  --text-color: #212529; /*ensure text color is visible on light background */
 
     /* Spacing & Sizing */
-    --header-height-sm: 8rem;
+    --header-height-sm: 3rem;
     --header-height-md: 10rem;
     --header-height-lg: 12rem;
     --header-padding-sm: 1rem;
     --header-padding-md: 1.5rem;
     --header-padding-lg: 2rem;
+    --header-font-size: 2.5rem;
     --main-padding-top-sm: 10rem;
     --main-padding-top-md: 12rem;
     --main-padding-top-lg: 14rem;
@@ -33,7 +35,7 @@
 
 body {
   font-family: "Nunito", sans-serif;
-  font-size: var(--base-font-size);
+  font-size: 1rem; /*base font size for better readability */
   margin: 0;
   background-color: var(--light-bg);
   color: var(--text-color);
@@ -42,8 +44,8 @@ body {
 
 form { 
   margin: 2rem auto; /* centers form on page */
-  max-width: 600px; /* constrains form width */
-  padding: 5rem; /* adds padding for better spacing */
+  max-width: 90%; /* constrains form width */
+  padding: 2rem 3rem; /* adds padding for better spacing */
   background-color: var(--light-bg); /* light background for better contrast */
   border-radius: 8px; /* rounded corners for visual appeal */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /*subtle shadow for emphasis */
@@ -53,16 +55,17 @@ input, textarea {
   width: 100%; /* expands input fields to full width for touch/tap accessibikity */
   padding: 1rem; /* adds padding for better spacing */
   margin-bottom: 1.5rem; /* adds margin bottom for better spacing */
-  border: 1px solid #121212; /* adds border for better separation */
+  border: 2px solid #121212; /* adds border for better separation and contrast*/
   border-radius: 4px; /*rounded corners for visual appeal */
   font-size: 1rem; /* default font size for better readability */
-  background-color: var(--light-bg); /* default background color */
+  background-color: #ffffff; /* white background for better contrast*/
   color: var(--text-color); /* sets default text color */
 }
 
 input:focus, textarea:focus {
-  outline: 2px solid var(--accent-color); /* adds focus outline for better visibility */
+  outline: 3px solid var(--accent-color); /* adds thicker focus outline for better visibility */
   border-color: var(--accent-color); /* changes border color on focus for better visibility */
+  background-color: #f0f8ff; /* light blue background on focus for better visibility */
 }
 
 a {
@@ -76,6 +79,8 @@ a:focus {
   text-decoration: underline;
   outline: 2px solid var(--accent-color);
   outline-offset: 2px;
+  background-color: var(--accent-color); /* changes background color on hover for better visibility */
+  color: #ffffff; /* white text color on hover for better contrast */
 }
 
 ul {
@@ -85,7 +90,7 @@ ul {
 }
 
 h1 {
-  font-size: var(--header-font-size);
+  font-size: 2.5rem; /*larger size for h1 for better emphasis */
   color: #ffffff;
   cursor: pointer;
   margin: 0;
@@ -110,14 +115,17 @@ h2 {
 header {
   /* Primary header color used for branding consistency */
   background-color: var(--primary-color); /*Style for branding */
+  box-shadow: 0 4px 6px rgba(0, 0, 0.1);
   color: #ffffff;
-  padding: 2rem 1rem; /* increased padding for better spacing */
+  padding: var(--header-padding-sm); /* increased padding for better spacing */
+  height: var(--header-height-sm); /*sets header height on mobile */
   text-align: center; /* aligns text centrally */
   margin: 0;
   width: 100%;
   position: fixed;
-  height: var(--heading-height);
-  z-index: 1;
+  top: 0;
+  left: 0;
+  z-index: 1000;
   border-bottom: 2px solid var(--accent-color); /*adds a visible border */
 }
 
@@ -126,7 +134,8 @@ main {
   max-width: var(--max-content-width);
   margin: 0 auto;
   padding: var(--section-padding);
-  padding-top: var(--main-padding-top-sm);
+  padding-top: calc(var(--main-padding-top-sm) + 2rem); /*ensures content is below header */
+  margin-top: var(--header-padding-sm); /* adds margin top for better spacing */
 }
 
 nav {
@@ -134,8 +143,8 @@ nav {
   flex-direction: column; /* stack items vertically as default style */
   justify-content: center; /* centers items vertically */
   gap: 1.5rem; /* increases spacing between items */
-  padding: 2rem 1rem; /* spacing for better clickability */
-  background-color: var(--primary-color); /*matches header branding */
+  padding: 1rem 0.5rem; /* spacing for better clickability */
+  background-color: var(--primary-color); /*standardized background color*/
   border: 1px solid var(--nav-border-color); /*creates subtle border */
   border-radius: 8px; /*rounds corners for visual appeal */
   margin-top: 0.5rem; /* adds margin for better spacing from other elements*/
@@ -150,14 +159,14 @@ nav ul {
 }
 
 nav a {
-  color: #ffffff;
-  padding: 0.5rem 1rem;
+  color: var(--accent-color);
+  padding: 1rem 2rem;
   border-radius: 4px;
   background-color: transparent;
   transition: background-color 0.3s ease;
   width: 100%;
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 nav a:hover,
@@ -169,8 +178,11 @@ nav a:focus {
 }
 section {
   scroll-margin-top: var(--section-margin-top-sm);
-  padding: 1rem; /* padding for content spacing for default style */
-  margin: 1rem; /* margin for content spacing for default style */;
+  padding: var(--section-margin-top-sm); /* padding for content spacing for default style */
+  border: 2px solid var(--accent-color); /* border for better separation */
+  background-color: var(--light-bg); /* background color for better contrast */
+  margin: 1rem; /* margin for content spacing for default style */
+  border-radius: 1rem; /* rounded corners for visual appeal */
 }
 
 .about-me-section {
@@ -180,7 +192,7 @@ section {
   background-color: var(--light-bg); /* background color for better contrast */
   border: 2px solid var(--accent-color); /* border for better separation */
   border-radius: 8px; /* rounded corners for visual appeal */
-  margin-top: 2rem; /*space above section for better separation */
+  margin-top: cal var(--section-margin-top-sm) + 3rem; /*space above section for better separation */
   text-align: center; /* center text for better readability */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a shadow for emphasis */
   color: var(--text-color); /*default text color */
@@ -200,7 +212,7 @@ section {
   padding: 1rem;
   border: 1px solid var(--secondary-color);
   border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.15);
   margin: 0.5rem 0;
 }
 
@@ -232,13 +244,13 @@ justify-content: space-between; /* evenly spaces items */
   padding: 0.5rem; /* padding for better spacing */
   border: 1px solid var(--secondary-color); /* border for better separation */
   border-radius: 8px; /* rounded corners for visual appeal */
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.15);
 }  
 
 .button {
   background-color: var(--secondary-color);
   color: #ffffff;
-  padding: 0.75rem 1.5rem;
+  padding: 1rem 2rem; /*bigger tap target */
   border-radius: 0.5rem;
   cursor: pointer;
   display: inline-flex;
@@ -255,7 +267,7 @@ justify-content: space-between; /* evenly spaces items */
 .button:focus {
   background-color: var(--accent-color);
   transform: translateY(-2px);
-  outline: none;
+  outline: 3px solid var(--dark-accent) /*thick outline for keyboard users */;
   text-decoration: none;
 }
 
@@ -266,17 +278,57 @@ justify-content: space-between; /* evenly spaces items */
   margin: 2rem 0;
 }
 
+/*Respository List in Projects Section*/
+#projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.project-item {
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--light-bg);
+  padding: 1.5rem; 
+  border-radius :8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.project-item:hover {
+  transform: scale(1.05);
+}
+
+.project-item p {
+  font-size: 1rem;
+  color: var(--text-color);
+  text-align: center;
+}
+
 /* Tablet Styles: Adjusts layout and spacing for screens 768px and above */
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 48rem) {/*768px*/
     /* header adjustments for tablet layout */
+    
     header {
-      height: 10rem;
-      padding-top: 1.5rem;
+      height: calc(var(--header-height-md) + 2rem); /*ensures content begins below header in tablets */;
+      padding-top: var(--header-padding-md);
       border-bottom: 3px solid var(--accent-color); /*adds new border to header */
       background-color: var(--dark-bg); /* darker color for tablets */
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* adds new box shadow to header */
+      color: #ffffff; /* white text color for better contrast */
     }
 
+    body {
+      color: var(--text-color); /* inherits color from root */
+      font-size: 1.125rem; /* increased font size for better readability */
+      line-height: 1.6; /* increased line height for better readability */
+
+    }
   /* Main content spacing adjustments for tablet view */
     main {
       padding-top: 12rem;
@@ -284,13 +336,13 @@ justify-content: space-between; /* evenly spaces items */
     }
   /* Adjusts input and textarea fields for better tablet presentation */
     input, textarea {
-      font-size: 1.1 rem; /*increased font size for better readability */
+      font-size: 1.125rem; /*increased font size for better readability */
       padding: 1.25rem; 
     }
 
     /* Navigation adjustments for tablet layout and visibility */
     nav {
-      flex-direction: row; /* change from column to row layout */
+      flex-direction: wrap; /* allows wrapping to prevent overflow */
       max-width: 90%; /* constrains width for tablet screen */
       padding: 1.5rem; /* adjusts padding for better clickability */
       background-color: var(--secondary-color); /* new background color for distinct style from desktop styles */
@@ -305,7 +357,7 @@ justify-content: space-between; /* evenly spaces items */
     /* Section spacing and visual improvements for tablet */
     section {
       scroll-margin-top: 12rem;
-      padding: 2rem;
+      padding: var(--section-padding-md);
       border-radius: 1.5rem; /* adds new border radius */
       border: 2px solid var(--accent-color); /* adds new border */
       background-color: var(--light-bg); /*adds new background color */
@@ -318,7 +370,7 @@ justify-content: space-between; /* evenly spaces items */
     padding: 3rem; /* adjusts padding */
     margin-top: 3rem; /* adjusts margin top */
     background-color: var(--light-bg); /*light background color for contract on tablets */
-     color: #212529;
+    color: #212529;
     font-size: 1.2rem;
     border-radius: 1.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* new box shadow added */
@@ -330,7 +382,6 @@ justify-content: space-between; /* evenly spaces items */
     grid-template-columns: 1fr 1fr; /* two columns for medium-sized screens */
     gap: 2rem; /* moderate spacing between items */
     font-size: 1rem;
-    background-color: grey;
     color: black;
     padding: 2rem;
     border-radius: 1rem;
@@ -340,12 +391,13 @@ justify-content: space-between; /* evenly spaces items */
 
   /*Creates skills flexbox layout for better presentation on tablets */
 #skills ul {
+  flex-wrap: wrap; /*wraps items to new line if space is limited*/
   display: flex; /* enables flex layout */
   justify-content: space-between; /* evenly spaces items */
 }
 
   /* Skills list item adjustments for tablet layout */
-  #skills li {
+#skills li {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -361,18 +413,28 @@ justify-content: space-between; /* evenly spaces items */
   border: 2px solid var(--accent-color);
 }
 
+#projects {
+  flex-direction: row; /*switch to row layout for better tablet presentation */
+  justify-content: space-evenly; /* spaces out items evenly */
+}
+
 /* Desktop Styles: Applied for screens 1024px and above */
-@media screen and (min-width: 1024px) {
-  /* header adjustments for improved visibility and spacing */
+@media screen and (min-width: 64rem) { /*1024px*/
+  /* header adjustments for improved visibility and spacing on desktops */
   header {
-    height: 12rem; 
-    padding-top: 2rem;
+    height: var(--header-height-lg); 
+    padding-top: calc(var(--header-padding-lg) + 2rem); /*ensures content begins below header in desktops */
     background-color: #2d3236; /* darker background for desktop distinction */
     text-align: center; /* centers text for better readability */
     font-size: 2rem; /* increased font size for better visibility on desktops */
-    color: var(--dark-text); /* dark text color for better contrast on desktop */
+    color: #ffffff; /* light  text color for better contrast on desktop */
   }
 
+  body {
+    color: var(--text-color); /* inherits color from root */
+    font-size: 1.25rem; /* increased font size for better readability on desktops */
+    line-height: 1.75; /* increased line height for better readability on desktops*/
+  }
 /*Main content spacing adjustments for desktop view */
   main {
     padding-top: 14rem;
@@ -383,13 +445,14 @@ justify-content: space-between; /* evenly spaces items */
 /* Adjusts input and textarea fields for better desktop presentation */
 input, textarea {
   font-size: 1.75rem; /* increased font size for better readability on desktops */
-  padding: 1.5 rem; /* increased padding for better spacing */
+  padding: 1.5rem; /* increased padding for better spacing */
 }
 
   /*Navigation adjustments for enhanced desktop interaction */
   nav {
+    flex-direction: wrap; /*allows wrapping to prevent overflow*/
     padding: 2rem 3rem; /* increased padding for desktop */
-    max-width: 80%; /* constrained width for better readability */
+    max-width: 85%; /* constrained width for better readability */
     font-size: 1.5rem; /* increased font size for better visibility on desktops*/
     margin: 0 auto; /* centers navigation on desktop screens */
     background-color: var(--dark-bg); /* darker background for better contrast */
@@ -402,10 +465,12 @@ input, textarea {
 nav a:hover {
   color: var(--highlight-color); /* Change link color on hover for desktop */
 }
+
   /*Section spacing and visual improvements for desktop */
   section {
-    scroll-margin-top: 14rem;
-    padding: 3rem;
+    scroll-margin-top: 14rem; /* increased scroll margin for better navigation */
+    padding: var(--section-margin-top-lg); /* increased padding for better spacing */
+    margin: 3rem;
     margin-bottom: 4rem; /*increased vertical spacing */
     font-size: 1.1rem; /* increased font size for better readability */
     background-color: #f0f0f0; /* light background for better contrast */
@@ -441,6 +506,7 @@ nav a:hover {
 skills ul {
 display: flex; /* enables flex layout */
 justify-content: space-between; /* evenly spaces items */
+flex-wrap: wrap; /*wraps items to new line if width is limited*/
 }
 
 #skills li {
@@ -459,6 +525,15 @@ justify-content: space-between; /* evenly spaces items */
   border: 2px solid var(--accent-color);
 }
 
+/*Projects section on desktop*/
+#projects {
+  justify-content: space-between; /*space items with more room*/
+}
+.project-item {
+  max-width: 30%; /*allows three items per row on desktop*/
+}
+
+
 /* Accessibility Styles */
 *:focus-visible {
   outline: 3px solid var(--accent-color);
@@ -469,5 +544,4 @@ img {
   max-width: 100%;
   height: auto;
   object-fit: cover;
-} 
 }
