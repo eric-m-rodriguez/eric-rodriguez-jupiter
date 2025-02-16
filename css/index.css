@@ -317,10 +317,56 @@ justify-content: space-between; /* evenly spaces items */
   text-align: center;
 }
 
-/* Tablet Styles: Adjusts layout and spacing for screens 768px and above */
+/* ========== Tablet Styles: Adjusts layout and spacing for screens 768px and above ==========*/
   @media screen and (min-width: 48rem) {/*768px*/
     /* header adjustments for tablet layout */
-    
+
+    body {
+      color: var(--text-color); /* inherits color from root */
+      font-size: 1.125rem; /* increased font size for better readability */
+      line-height: 1.6; /* increased line height for better readability */
+    }
+
+    form {
+
+    }
+
+/* Adjusts input and textarea fields for better tablet presentation */
+input, 
+textarea {
+  font-size: 1.125rem; /*increased font size for better readability */
+  padding: 1.25rem; 
+}
+
+input:focus,
+textarea:focus {
+
+}
+
+a {
+
+}
+
+a:hover,
+a:focus {
+
+} 
+ ul {
+
+ }
+
+ h1 {
+
+ }
+
+ h1 a {
+
+ }
+
+ h2 {
+
+ }
+
     header {
       height: auto;
       min-height: var(--header-height-sm);
@@ -333,12 +379,6 @@ justify-content: space-between; /* evenly spaces items */
       color: #ffffff; /* white text color for better contrast */
     }
 
-    body {
-      color: var(--text-color); /* inherits color from root */
-      font-size: 1.125rem; /* increased font size for better readability */
-      line-height: 1.6; /* increased line height for better readability */
-
-    }
   /* Main content spacing adjustments for tablet view */
     main {
       padding-top: 12rem;
@@ -349,12 +389,7 @@ justify-content: space-between; /* evenly spaces items */
       padding: 3rem; /* adds more padding for table screens*/
       margin: 2rem; /* increases margin for better separation on tablet*/
     }
-  /* Adjusts input and textarea fields for better tablet presentation */
-    input, textarea {
-      font-size: 1.125rem; /*increased font size for better readability */
-      padding: 1.25rem; 
-    }
-
+  
     /* Navigation adjustments for tablet layout and visibility */
     nav {
       flex-direction: row; /* ensure horizontal layout */
@@ -365,6 +400,15 @@ justify-content: space-between; /* evenly spaces items */
       font-size: 1.5rem; /*adjusted font size for readability */
       background-color: var(--secondary-color); /* new background color for distinct style from desktop styles */
     }
+
+      /*Addtional nav list item adjustments for tablet layout and visibility */
+      nav ul {
+        display: flex;
+        flex-direction: row; /* changes from column to row layout */
+        gap: 2rem; /* increases spacing between items */
+        justify-content: center;
+      }
+  
 
     nav a {
       color: var(--accent-color);
@@ -384,15 +428,7 @@ justify-content: space-between; /* evenly spaces items */
       text-decoration: none; /*removes the underline on hover*/
       transform: scale(1.05); /*adds a slight scale*/
     }
-
-    /*Addtional nav list item adjustments for tablet layout and visibility */
-    nav ul {
-      display: flex;
-      flex-direction: row; /* changes from column to row layout */
-      gap: 2rem; /* increases spacing between items */
-      justify-content: center;
-    }
-
+ 
     /* Section spacing and visual improvements for tablet */
     section {
       scroll-margin-top: 12rem;
@@ -428,6 +464,23 @@ justify-content: space-between; /* evenly spaces items */
     background-color: var(--secondary-color); /* adds new background color */
   }
 
+  .experience-item {
+
+  }
+
+  .job-info {
+
+  }
+
+  .job-title {
+
+  }
+
+  .job-description {
+
+  }
+
+
   /*Creates skills flexbox layout for better presentation on tablets */
 #skills ul {
   flex-wrap: wrap; /*wraps items to new line if space is limited*/
@@ -443,6 +496,7 @@ justify-content: space-between; /* evenly spaces items */
     padding: 1rem;
   
   }  
+
   /* Button stylings with interactive elements for tablet cursor precision */
 .button {
   padding: 1rem 2rem; /* more comfortable touch screen size */
@@ -452,28 +506,78 @@ justify-content: space-between; /* evenly spaces items */
   border: 2px solid var(--accent-color);
 }
 
-button {
-  input[type="submit"],
-  .nav-link {
-    min-height: 44px;
-    min-width: 44px;
-    padding: 12 px 16 px;
-  }
+.button:hover, 
+.button:focus {
+
 }
+.button-container {
+
+}
+
 #projects {
   flex-direction: row; /*switch to row layout for better tablet presentation */
   justify-content: space-evenly; /* spaces out items evenly */
 }
 
-/* Desktop Styles: Applied for screens 1024px and above */
+#project-item {
+
+}
+
+#project-item:hover {
+
+}
+
+#project-item p {
+
+}
+
+/* ========== Desktop Styles: Applied for screens 1024px and above ========== */
 @media screen and (min-width: 64rem) { /*1024px*/
   /* header adjustments for improved visibility and spacing on desktops */
 
-  h2 {
+  body {
+    color: var(--text-color); /* inherits color from root */
+    font-size: 1.125rem; /* increased font size for better readability on desktops */
+    line-height: 1.75; /* increased line height for better readability on desktops*/
+  }
+
+  form {
+
+  }
+
+/* Adjusts input and textarea fields for better desktop presentation */
+ input, textarea {
+  font-size: 1rem; /* increased font size for better readability on desktops */
+  padding: .75rem; /* increased padding for better spacing */
+}
+
+ input:focus,
+ textarea:focus {
+
+}
+
+ a {
+
+}
+  
+a:hover,
+a:focus {
+
+}
+
+h1 {
+
+}
+
+h1 a {
+
+}
+
+h2 {
     color: #FFEFB2;
   }
 
-  header {
+header {
     height: var(--header-height-sm); 
     padding-top: var(--header-height-lg); /*ensures content begins below header in desktops */
     background-color: var(--dark-bg); /* darker background for desktop distinction */
@@ -483,11 +587,6 @@ button {
 
   }
 
-  body {
-    color: var(--text-color); /* inherits color from root */
-    font-size: 1.125rem; /* increased font size for better readability on desktops */
-    line-height: 1.75; /* increased line height for better readability on desktops*/
-  }
 /*Main content spacing adjustments for desktop view */
   main {
     padding-top: 14rem;
@@ -495,39 +594,49 @@ button {
     max-width: 1200px; /* constrained width for optimal desktop readability */
   }
 
-/* Adjusts input and textarea fields for better desktop presentation */
-input, textarea {
-  font-size: 1rem; /* increased font size for better readability on desktops */
-  padding: .75rem; /* increased padding for better spacing */
-}
-
-  /*Navigation adjustments for enhanced desktop interaction */
+/*Navigation adjustments for enhanced desktop interaction */
   nav {
-    flex-direction: wrap; /*allows wrapping to prevent overflow*/
-    padding: 2rem 4rem; /* increased padding for desktop */
-    max-width: 90%; /* constrained width for better readability */
+    position: sticky;
+    top: 0; 
+    display: block; 
+    flex-direction: row;
+    flex-wrap: wrap; /*allows wrapping to prevent overflow*/
+    padding: 2rem 8rem; /* increased padding for desktop */
+    max-width: 75%; /* constrained width for better readability */
     font-size: 1.6rem; /* increased font size for better visibility on desktops*/
     gap: 2.5rem; /*increased gap between links for desktop*/
     margin: 0 auto; /* centers navigation on desktop screens */
+    margin-bottom: 4rem;
     background-color: var(--dark-bg); /* darker background for better contrast */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* subtle shadow for better separation */
-    border-radius: 12px; /*rounds corner on desktop */
-    border-top: 2px solid var(--accent-color); /* adds a top border for desktop */
+    border-radius: 2rem; /*rounds corner on desktop */
+    border-top: 4px solid var(--accent-color); /* adds a top border for desktop */
     text-align: center; /* centers text for better readability */
     color: #ffffff;
   }
 
   nav ul {
+    display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 90%;
+    padding: 0;
+    margin: 0; 
+    list-style: none;
+    gap: 2rem;
   } 
 
   nav a {
-    padding: 1rem 2.5rem; /*slightly larger padding on desktop*/
-    color:#ccc; /*
+    padding: 1rem 2rem; /*slightly larger padding on desktop*/
+    color:#ccc; 
+   
+    
   }
 
-nav a:hover {
+nav a:hover,
+nav:a focus {
   color: var(--highlight-color); /* Change link color on hover for desktop */
   }
 
@@ -546,7 +655,7 @@ nav a:hover {
 /* About me section modifications for desktop presentation */
 .about-me-section {
   padding: 5rem; /* increases padding for better content spacing*/
-  margin-top: 4rem;
+  margin-top: 5rem;
   font-size: 1.75rem; /* larger font for desktop viewing */
   background-color: var(--dark-bg); /* dark background for better contrast on desktop */
   color: #ffffff;
@@ -568,6 +677,35 @@ nav a:hover {
   padding: 4rem; /* increases padding for better spacing*/
 }
 
+.experience-item {
+
+}
+
+.job-info {
+
+}
+
+.job-title {
+
+}
+
+.job-description {
+
+}
+/* Created skills flexbox layout for better presentation on desktop */
+skills ul {
+  display: flex; /* enables flex layout */
+  justify-content: space-between; /* evenly spaces items */
+  flex-wrap: wrap; /*wraps items to new line if width is limited*/
+  }
+
+  #skills li {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }  
+
 #skills {
     grid-template-columns: 1fr 1fr 1fr; /* switched experience section to three-column layout for desktop screens */
     gap: 3rem; /*increased spacing between items */
@@ -580,20 +718,6 @@ nav a:hover {
     padding: 4rem; /* increases padding for better spacing*/
   }
 
-/* Created skills flexbox layout for better presentation on desktop */
-skills ul {
-display: flex; /* enables flex layout */
-justify-content: space-between; /* evenly spaces items */
-flex-wrap: wrap; /*wraps items to new line if width is limited*/
-}
-
-#skills li {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 1rem;
-}
-
 /* Button stylings with interactive elements for desktop cursor precision */
 .button {
   padding: 1.5rem 2rem; /* Enlarged padding for better clickability*/
@@ -601,6 +725,15 @@ flex-wrap: wrap; /*wraps items to new line if width is limited*/
   gap: 1.25rem; /* increases gap */
   font-size: 1.75rem; /* Increased font size for better readability*/
   border: 2px solid var(--accent-color);
+}
+
+.button:hover,
+.button:focus {
+
+}
+
+.button-container {
+
 }
 
 /*Projects section on desktop*/
@@ -618,6 +751,14 @@ flex-wrap: wrap; /*wraps items to new line if width is limited*/
 
 .project-item {
   max-width: 30%; /*allows three items per row on desktop*/
+}
+
+.project-item:hover {
+
+}
+
+.project-item p {
+
 }
 
 /* Accessibility Styles */
