@@ -91,7 +91,7 @@
 
       <section id="projects">
         <h2>Projects</h2>
-        <ul></ul>
+        <ul> </ul>
       </section>
 
       <section id="connect">
@@ -122,7 +122,8 @@
     <!-- Leave a Message Section -->
     <section>
       <h2 id="leaveMessage">Leave a Message</h2>
-      <form name="leave_message">
+      <form name="leave_message" novalidate> <!--added novalidate to ensure that form data is not validated when submitting the form -->
+
         <label for="usersName">Name:</label>
         <input type="text" name="usersName" id="usersName" required> 
         <br>
