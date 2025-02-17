@@ -33,17 +33,17 @@
 
 body {
   font-family: "Nunito", sans-serif;
-  font-size: 1.125rem; /*base font size for better readability */
+  font-size: 1rem; /*base font size for better readability */
   margin: 0;
   background-color: var(--light-bg);
   color: var(--text-color);
-  line-height: 1.6;  
+  line-height: 1.4;  
 }
 
 form { 
-  margin: 2rem auto; /* centers form on page */
-  max-width: 90%; /* constrains form width */
-  padding: 2rem 3rem; /* adds padding for better spacing */
+  margin: 1rem; /* centers form on page */
+  max-width: 100%; /* constrains form width */
+  padding: 1rem; /* adds padding for better spacing */
   background-color: var(--light-bg); /* light background for better contrast */
   border-radius: 8px; /* rounded corners for visual appeal */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /*subtle shadow for emphasis */
@@ -51,11 +51,11 @@ form {
 
 input, textarea {
   width: 100%; /* expands input fields to full width for touch/tap accessibility */
-  padding: 1.5rem; /* adds padding for better spacing */
-  margin-bottom: 1.5rem; /* adds margin bottom for better spacing */
+  padding: 0.75rem; /* adds padding for better spacing */
+  margin-bottom: 1rem; /* adds margin bottom for better spacing */
   border: 2px solid #121212; /* adds border for better separation and contrast*/
   border-radius: 4px; /*rounded corners for visual appeal */
-  font-size: 1.125rem; /* default font size for better readability */
+  font-size: 1rem; /* default font size for better readability */
   background-color: #ffffff; /* white background for better contrast*/
   color: var(--text-color); /* sets default text color */
 }
@@ -88,12 +88,12 @@ ul {
 }
 
 h1 {
-  font-size: 2.5rem; /*larger size for h1 for better emphasis */
+  font-size: 1.75rem; /*larger size for h1 for better emphasis */
   color: #ffffff;
   cursor: pointer;
   margin: 0;
   text-transform: uppercase;
-  font-weight: 800;
+  font-weight: bold;
 }
 
 h1 a {
@@ -104,7 +104,8 @@ h1 a {
 h2 {
   /*font-size: var(--subheader-font-size);*/
   color: var(--secondary-color);
-  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--accent-color);
   text-align: center;
@@ -115,7 +116,7 @@ header {
   background-color: var(--primary-color); /*Style for branding */
   box-shadow: 0 4px 6px rgba(0, 0, 0.1);
   color: #ffffff;
-  padding: var(--header-padding-sm); /* increased padding for better spacing */
+  padding: 1rem;
   height: var(--header-height-sm); /*sets header height on mobile */
   text-align: center; /* aligns text centrally */
   margin: 0;
@@ -123,8 +124,9 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 1001;
   border-bottom: 2px solid var(--accent-color); /*adds a visible border */
+
 }
 
 main {
@@ -132,7 +134,8 @@ main {
   max-width: var(--max-content-width);
   margin: 0 auto;
   padding: var(--section-padding);
-  padding-top: 12rem; /*ensures content is below header */
+  padding-top: 4rem; /*ensures content is below header */
+  padding-bottom: 4rem;
   margin-top: var(--header-padding-sm); /* adds margin top for better spacing */
 }
 
@@ -149,24 +152,30 @@ nav {
   border-radius: 8px; /*rounds corners for visual appeal */
   margin-top: 0.5rem; /* adds margin for better spacing from other elements*/
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds a shadow for emphasis */
+  max-width: 90%;
 }
 
 nav ul {
-  display: flex; /* enables flex layout */
-  flex-direction: column; /* stack navigation links vertically */
-  align-items: center; /* centers items horizontally */
-  gap: 1rem; /*adds spacing between items */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5 rem;
+  
+  
+  /*flex-direction: column; /* stack navigation links vertically */
+  /*align-items: center; /* centers items horizontally */
+  /*gap: 1rem; /*adds spacing between items */
 }
 
 nav a {
-  color: var(--accent-color);
-  padding: 1rem 2rem;
+  color: white;
+  padding: .75rem;
   border-radius: 4px;
   background-color: transparent;
   transition: background-color 0.3s ease;
   width: 100%;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
+  white-space: nowrap;
 }
 
 nav a:hover,
@@ -178,21 +187,22 @@ nav a:focus {
 }
 section {
   scroll-margin-top: var(--section-margin-top-sm);
-  padding: var(--section-margin-top-sm); /* padding for content spacing for default style */
+  padding: 1.5rem;/*var(--section-margin-top-sm); /* padding for content spacing for default style */
   border: 2px solid var(--accent-color); /* border for better separation */
   background-color: var(--light-bg); /* background color for better contrast */
-  margin: 1rem; /* margin for content spacing for default style */
-  border-radius: 1rem; /* rounded corners for visual appeal */
+  margin: 1rem 0; /* margin for content spacing for default style */
+  border-radius: 0.5rem; /* rounded corners for visual appeal */
 }
 
 .about-me-section {
   /*light background color for better contrast with dark text*/
   display: block;
-  padding: 2rem; /* padding for content spacing for default style */
+  padding: 1.5rem; /* padding for content spacing for default style */
   background-color: var(--light-bg); /* background color for better contrast */
   border: 2px solid var(--accent-color); /* border for better separation */
   border-radius: 8px; /* rounded corners for visual appeal */
-  margin-top: calc(var(--section-margin-top-sm) + 3rem); /*space above section for better separation */
+  margin-top: 4rem;
+  font-size: 1rem;
   text-align: center; /* center text for better readability */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a shadow for emphasis */
   color: var(--text-color); /*default text color */
@@ -206,7 +216,7 @@ section {
 }
 
 .experience-section h2{
-  color: white;
+  color: var(--primary-color);
 }
 .experience-item {
   display: flex;
@@ -217,6 +227,9 @@ section {
   border-radius: 8px;
   background-color: rgba(255, 255, 255, 0.15);
   margin: 0.5rem 0;
+  align-items: center;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .job-info {
@@ -238,18 +251,26 @@ section {
 }
 
 #skills ul {
-display: flex; /* enables flex layout */
+display: grid; /* enables flex layout */
+grid-template-columns: repeat(2, 1fr);
+flex-direction: column;
+flex-wrap: wrap;
 justify-content: space-between; /* evenly spaces items */
+gap: 1rem;
+margin-top: 1rem;
 }
 
 #skills li {
- 
-  padding: 0.5rem; /* padding for better spacing */
+  padding: 0.75rem; /* padding for better spacing */
   border: 1px solid var(--secondary-color); /* border for better separation */
   border-radius: 8px; /* rounded corners for visual appeal */
   background-color: rgba(255, 255, 255, 0.15);
-}  
-*:focus { /* adds : focus for all elements*/
+  justify-content: space-around;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/*:focus { /* adds : focus for all elements*/
   outline: 3px solid var(--accent-color);
   outline-offset: 2px;
   box-shadow: 0 0 0 2px white;
@@ -258,7 +279,10 @@ justify-content: space-between; /* evenly spaces items */
 .button {
   background-color: var(--secondary-color);
   color: #ffffff;
-  padding: 1rem 2rem; /*bigger tap target */
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem; 
+  width: auto;
+  min-width: 150px;
   border-radius: 0.5rem;
   cursor: pointer;
   display: inline-flex;
@@ -294,6 +318,9 @@ justify-content: space-between; /* evenly spaces items */
   gap: 2rem;
   justify-content: center;
   margin-top: 2rem;
+  padding: 1rem;
+  max-width: 100%;
+  margin-bottom: 1rem;
 }
 
 .project-item {
@@ -301,12 +328,13 @@ justify-content: space-between; /* evenly spaces items */
   flex-direction: column;
   align-items: center;
   background-color: var(--light-bg);
-  padding: 1.5rem; 
+  padding: 1rem; 
   border-radius :8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 300px;
   transition: transform 0.3s ease;
+  margin-bottom: 1rem;
 }
 
 .project-item:hover {
@@ -316,6 +344,12 @@ justify-content: space-between; /* evenly spaces items */
 .project-item p {
   font-size: 1rem;
   color: var(--text-color);
+  text-align: center;
+}
+
+footer {
+  background-color: var(--primary-color);
+  color: #ffffff;
   text-align: center;
 }
 
@@ -824,26 +858,30 @@ nav a:focus {
 #projects {
   display: grid;
   grid-template-columns: repeat(3,1fr); /* switched experience section to three-column layout for desktop screens */
-  gap: 3rem; /*increased spacing between items */
+  gap: 2.5rem; /*increased spacing between items */
   background-color: #333; /* dark background for better contrast */
-  font-size: 1.25rem; /*larger font size for better readability */
+  font-size: 1.5rem; /*larger font size for better readability */
   border-radius: 2rem; /* rounded corners for visual appeal */
   border: 1px solid var(--accent-color); /*accent border for consistency */
   transform: scale(1.05); /*slight zoom effect */
-  padding: 4rem; /* increases padding for better spacing*/
+  padding: 5rem; /* increases padding for better spacing*/
 }
 
 #projects ul {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  /*flex-direction: wrap;*/
   max-width: 25rem; /*allows three items per row on desktop*/
+  gap: 1.5rem;
   padding: 2rem;
+  max-width: 100%;
 }
 
 #projects li  {
-  font-size: 1rem;
-  color: #ffffff; /*ensures text is visible on dark background */;
+  font-size: 1.125rem;
+  color: var(--text-color); /*ensures text is visible on dark background */;
   line-height: 1.6;
+  padding: 3rem;
 }
 
 #connect {
