@@ -3,6 +3,11 @@
 
 /* Mobile Styles: Applied to mobile devices smaller than 768px (default style */
 :root {
+  /*Breakpoint Variables */
+  --tablet-width: 767px;
+  --desktop-width: 65rem;
+
+
   /* Color Palette */
   --primary-color: #343a40;
   --secondary-color: #495057;
@@ -34,7 +39,6 @@
 body {
   font-family: "Nunito", sans-serif;
   font-size: 1rem; /*base font size for better readability */
-  margin: 0;
   background-color: var(--light-bg);
   color: var(--text-color);
   line-height: 1.4;  
@@ -42,7 +46,6 @@ body {
 
 form { 
   margin: 1rem; /* centers form on page */
-  max-width: 100%; /* constrains form width */
   padding: 1rem; /* adds padding for better spacing */
   background-color: var(--light-bg); /* light background for better contrast */
   border-radius: 8px; /* rounded corners for visual appeal */
@@ -141,51 +144,67 @@ main {
 
 nav {
   position: sticky;
-  top: 0; /*ensure nav stays at top*/
-  display: flex; /* changed from block to flex to create flexible layout as default style */
-  flex-direction: row; /* stack items vertically as default style */
-  justify-content: space-between; /* centers items vertically */
-  align-items: center;
-  gap: 1rem; /* increases spacing between items */
-  padding: 1rem 2rem; /* spacing for better clickability */
-  background-color: var(--primary-color); /*standardized background color*/
-  border: 1px solid var(--nav-border-color); /*creates subtle border */
-  border-radius: 8px; /*rounds corners for visual appeal */
-  margin-top: 0.5rem; /* adds margin for better spacing from other elements*/
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds a shadow for emphasis */
-  max-width: 90%;
+  top: 0;
+  width: 100%;
+  margin: 1rem auto; /*centers nav and creates spacing*/ 
+  padding: 1rem; /*comfortable padding for mobile*/
+  
+  /*Nav visual styling*/
+  background-color: var(--primary-color);
+  border: 1px solid var(--nav-border-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  /*ensures Nav stays above content*/
+  z-index: 1000;
 }
 
 nav ul {
-  display: flex;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5 rem;
-  justify-content: center;
-  
-  /*flex-direction: column; /* stack navigation links vertically */
-  /*align-items: center; /* centers items horizontally */
-  /*gap: 1rem; /*adds spacing between items */g
+ display: flex;
+ flex-direction: column;
+ width: 100%;
+ gap: 0.75rem;
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 100%;
+}
+
+nav li {
+  width: 100%;
 }
 
 nav a {
-  color: white;
-  padding: 1rem 1.5rem;
-  border-radius: 4px;
-  background-color: transparent;
-  transition: background-color 0.3s ease;
+  /*link structure*/
+  display: block;
   width: 100%;
+  padding: 0.75rem 1rem;  
+
+  /*typography*/
+  color: #ffffff;
+  font-size: 1rem;
+  text-decoration: none;
   text-align: center;
-  font-size: 0.9rem;
-  white-space: nowrap;
+
+  /*visual feedback*/
+  border-radius: 4px;
+  transition: background-color 0.2 ease;
 }
 
+/*Accessibility - Focus States*/  
 nav a:hover,
 nav a:focus {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
   background-color: var(--accent-color);
   color: #ffffff;
-  text-decoration: none;
-  transform: scale(1.05); /* scales item on hover for better feedback */
+
+/*Touch - Active States*/
+nav a:active {
+  background-color: var(--accent-color);
+  transform: translateY(1px);
 }
+
 section {
   scroll-margin-top: var(--section-margin-top-sm);
   padding: 1.5rem;/*var(--section-margin-top-sm); /* padding for content spacing for default style */
@@ -360,6 +379,7 @@ footer {
       color: var(--text-color); /* inherits color from root */
       font-size: 1.125rem; /* increased font size for better readability */
       line-height: 1.6; /* increased line height for better readability */
+
     }
 
     form {
@@ -417,12 +437,9 @@ footer {
     header {
       height: var(--header-height-md);
       padding: var(--header-padding-md);
-      padding-top: var(--header-padding-md);
-      padding-bottom: 0rem;
-      border-bottom: 3px solid var(--accent-color); /*adds new border to header */
-      background-color: var(--dark-bg); /* darker color for tablets */
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* adds new box shadow to header */
-      color: #ffffff; /* white text color for better contrast */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
   /* Main content spacing adjustments for tablet view */
@@ -443,9 +460,14 @@ footer {
       max-width: 90%; /*ensures nav takes up entire screen width*/
       padding: 2rem 3rem; /* adjusts padding for better clickability */
       gap: 2rem; /* space out the links */
-      font-size: 1.5rem; /*adjusted font size for readability */
-      background-color: var(--secondary-color); /* new background color for distinct style from desktop styles */
-    }
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }  
+      
+      /*font-size: 1.5rem; /*adjusted font size for readability */
+      /*background-color: var(--secondary-color); /* new background color for distinct style from desktop styles */
+    
 
       /*Addtional nav list item adjustments for tablet layout and visibility */
       nav ul {
@@ -457,7 +479,6 @@ footer {
   
 
     nav a {
-      color: var(--accent-color);
       padding: 1.25rem 2.5rem; /* adjusts padding around each link */
       border-radius: 4px;
       background-color: transparent;
@@ -706,7 +727,6 @@ header {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center; /*aligns items vertically*/
-    padding: 2rem 4rem; /* increased padding for desktop */
     height: 4rem;
     width: 90%;
     max-width: 75rem; /* constrained width for better readability */
@@ -775,6 +795,7 @@ nav a:focus {
   color: #ffffff;
   border-radius: 2rem;
   box-shadow: 0 8px 12px rgba(0, 0, 0, .3); /*increased box shadow for better visibility on desktop */
+  text-align: left;
 }
 
 /* Experience section with three columns layout for optimal viewing on desktop */
@@ -782,12 +803,17 @@ nav a:focus {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* switched experience section to three-column layout for desktop screens */
   gap: 3rem; /*increased spacing between items */
-  background-color: #333; /* dark background for better contrast */
-  color: white; /*ensures text is visible on dark background */
-  font-size: 1.25rem; /*larger font size for better readability */
-  border-radius: 2rem; /* rounded corners for visual appeal */
-  border: 1px solid var(--accent-color); /*accent border for consistency */
-  transform: scale(1.05); /*slight scaling emphasis */
+  background-color: var(--dark-bg); /* dark background for better contrast */
+  color: var(--light-bg); /*ensures text is visible on dark background */
+  padding: 3rem;
+  margin: 2rem 0;
+  border-radius: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+ /* font-size: 1.25rem; /*larger font size for better readability */
+  /*border-radius: 2rem; /* rounded corners for visual appeal */
+  /*border: 1px solid var(--accent-color); /*accent border for consistency */
+  /*transform: scale(1.05); /*slight scaling emphasis */
 }
 
 .experience-item {
@@ -870,8 +896,6 @@ nav a:focus {
 #projects ul {
   display: grid;
   grid-template-columns: repeat(3,1fr);
-  /*flex-direction: wrap;*/
-  max-width: 25rem; /*allows three items per row on desktop*/
   gap: 1.5rem;
   padding: 2rem;
   max-width: 100%;
