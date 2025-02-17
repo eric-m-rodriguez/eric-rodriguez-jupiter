@@ -30,7 +30,6 @@
     --section-margin-top-sm: 10rem;
     --section-margin-top-md: 12rem;
     --section-margin-top-lg: 14rem;
-  }
 
 body {
   font-family: "Nunito", sans-serif;
@@ -103,7 +102,7 @@ h1 a {
 }
 
 h2 {
-  font-size: var(--subheader-font-size);
+  /*font-size: var(--subheader-font-size);*/
   color: var(--secondary-color);
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
@@ -206,6 +205,9 @@ section {
   padding: var(--section-padding);
 }
 
+.experience-section h2{
+  color: white;
+}
 .experience-item {
   display: flex;
   flex-direction: column;
@@ -275,7 +277,7 @@ justify-content: space-between; /* evenly spaces items */
   transform: translateY(-2px);
   outline: 3px solid var(--dark-accent) /*thick outline for keyboard users */;
   text-decoration: none;
-  border: 2px sold var(--secondary-color); /*ensures contrast*/
+  border: 2px solid var(--secondary-color); /*ensures contrast*/
 }
 
 .button-container {
@@ -328,51 +330,62 @@ justify-content: space-between; /* evenly spaces items */
     }
 
     form {
-
+      max-width: 80%;
+      padding: 2rem 3rem;
     }
 
 /* Adjusts input and textarea fields for better tablet presentation */
-input, 
-textarea {
-  font-size: 1.125rem; /*increased font size for better readability */
-  padding: 1.25rem; 
+  input, 
+  textarea {
+    font-size: 1.125rem; /*increased font size for better readability */
+    padding: 1.5rem; /*increased padding for space management and to render fields more touch-friendly*/
 }
 
-input:focus,
-textarea:focus {
-
+  input:focus,
+  textarea:focus {
+    outline: none; 
+    border: 2px solid var(--accent-color); /*adds a border when focused*/
+    background-color: var(--highlight-bg);  /*light background to show focus*/
 }
 
-a {
-
+  a {
+    color: var(--primary-color); /*sets the base link color*/
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease /*smooth transition on hover*/
 }
 
-a:hover,
-a:focus {
-
+  a:hover,
+  a:focus {
+    text-decoration: none;
+    outline: 2px solid var(--accent-color);
+    color: #ffffff;
+    background-color: var(--accent-color);
 } 
- ul {
 
+ ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
  }
 
  h1 {
-
+    font-size: 2.5rem; /*adjusted for tablet*/
  }
 
  h1 a {
-
+  color: #ffffff;
+  text-decoration: none;
  }
 
  h2 {
-
+  font-size: 1.8rem; /*adjusted for tablet*/
  }
 
     header {
-      height: auto;
-      min-height: var(--header-height-sm);
-      padding: var(--header-padding-md);
       height: var(--header-height-md);
+      padding: var(--header-padding-md);
       padding-top: var(--header-padding-md);
+      padding-bottom: 0rem;
       border-bottom: 3px solid var(--accent-color); /*adds new border to header */
       background-color: var(--dark-bg); /* darker color for tablets */
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* adds new box shadow to header */
@@ -381,20 +394,20 @@ a:focus {
 
   /* Main content spacing adjustments for tablet view */
     main {
-      padding-top: 12rem;
+      padding-top: 10rem;
       margin: 0 auto;
     }
 
     section {
-      padding: 3rem; /* adds more padding for table screens*/
-      margin: 2rem; /* increases margin for better separation on tablet*/
+      padding: 2.5rem; /* adds more padding for table screens*/
+      margin: 1.5rem; /* increases margin for better separation on tablet*/
     }
   
     /* Navigation adjustments for tablet layout and visibility */
     nav {
       flex-direction: row; /* ensure horizontal layout */
       justify-content: space-around;
-      max-width: 85%; /* constrains width for tablet screen */
+      max-width: 90%; /*ensures nav takes up entire screen width*/
       padding: 2rem 3rem; /* adjusts padding for better clickability */
       gap: 2rem; /* space out the links */
       font-size: 1.5rem; /*adjusted font size for readability */
@@ -412,13 +425,13 @@ a:focus {
 
     nav a {
       color: var(--accent-color);
-      padding: 1rem 2rem; /* adjusts padding around each link */
+      padding: 1.25rem 2.5rem; /* adjusts padding around each link */
       border-radius: 4px;
       background-color: transparent;
-      transition: back-ground-color 0.3s ease;
+      transition: background-color 0.3s ease;
       width: 100%;
       text-align: center;
-      font-size: 1.2rem;
+      font-size: 1.25rem;
     }
 
     nav a:hover, 
@@ -438,12 +451,12 @@ a:focus {
       background-color: var(--light-bg); /*adds new background color */
       margin: 2rem 0; /* adds new margin */
     }
-  }
 
   /* About me section modifications for tablet presentation */
   .about-me-section {
+    font-size: 1.1rem; /*refined font size for better reading on tablets*/
     padding: 3rem; /* adjusts padding */
-    margin-top: 3rem; /* adjusts margin top */
+    margin-top: 8rem; /* adjusts margin top */
     background-color: var(--light-bg); /*light background color for contract on tablets */
     color: #212529;
     font-size: 1.2rem;
@@ -455,7 +468,7 @@ a:focus {
   /* Switched to a two-column grid layout for better readability on tablets */
   .experience-section {
     grid-template-columns: 1fr 1fr; /* two columns for medium-sized screens */
-    gap: 2rem; /* moderate spacing between items */
+    gap: rem; /* moderate spacing between items */
     font-size: 1rem;
     color: black;
     padding: 2rem;
@@ -464,28 +477,50 @@ a:focus {
     background-color: var(--secondary-color); /* adds new background color */
   }
 
-  .experience-item {
-
+  .experience-section h2 {
+    color: white;
+  }
+  
+  .experience-item { /*sets entire job card stylings on tablets*/
+    background-color: var(--light-bg);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+    
+  .job-title {/*title of each job in tablets*/
+    font-weight: bold; 
+    color: var(--dark-accent)
   }
 
-  .job-info {
-
+  .job-dates {/*dates of each job in tablets*/
+    font-weight: bold;
+    text-align: center;
   }
 
-  .job-title {
-
+  .job-description {/*descriptive text in each job description in tablets*/
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.6rem;
   }
 
-  .job-description {
-
-  }
-
+#skills {
+  border-radius: 1.5rem;
+  max-width: 100%;
+  border: 1px solid var(--accent-color);
+  padding-bottom: 2rem;
+}
 
   /*Creates skills flexbox layout for better presentation on tablets */
 #skills ul {
   flex-wrap: wrap; /*wraps items to new line if space is limited*/
   display: flex; /* enables flex layout */
-  justify-content: space-between; /* evenly spaces items */
+  justify-content: space-evenly; /* centers items on tablet */
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: var(--light-bg)
+
 }
 
   /* Skills list item adjustments for tablet layout */
@@ -497,40 +532,65 @@ a:focus {
   
   }  
 
-  /* Button stylings with interactive elements for tablet cursor precision */
-.button {
-  padding: 1rem 2rem; /* more comfortable touch screen size */
-  border-radius: 1.25rem; /* rounded corners for visual appeal */
-  gap: 0.75rem;
-  font-size: 1.5rem; /* legible font size for tablets */
-  border: 2px solid var(--accent-color);
-}
-
-.button:hover, 
-.button:focus {
-
-}
-.button-container {
-
-}
-
-#projects {
+.experience-section {
   flex-direction: row; /*switch to row layout for better tablet presentation */
   justify-content: space-evenly; /* spaces out items evenly */
 }
 
-#project-item {
-
+#projects ul {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 2rem;
+  flex-wrap: wrap;
+  display: flex; 
+  justify-content: space-evenly;
 }
 
-#project-item:hover {
-
+#projects li {
+  padding: 1.5rem;
+  background-color: var(--light-bg);
+  border-radius: 5px;
+  color: var(--text-color);
+  width: calc(50% - 2rem);
+  border: 2px solid black;
+  border-radius: 1.5rem;
+  display: flex;
 }
 
-#project-item p {
+.project-item:hover {
 
 }
+  /* Button stylings with interactive elements for tablet cursor precision */
+  .button {
+    padding: 1rem 2rem; /* more comfortable touch screen size */
+    border: 2px solid var(--accent-color);
+    border-radius: 1.25rem; /* rounded corners for visual appeal */
+    gap: 0.75rem;
+    font-size: 1.5rem; /* legible font size for tablets */
+    border: 2px solid var(--accent-color);
+  }
+  
+  /*Button containers for styling the Connect section links*/ 
+  .button:hover, 
+  .button:focus {
+  
+  }
+  .button-container {
+    max-width: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 
+footer {
+  background-color: var(--dark-accent);
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem;
+}
+  
 /* ========== Desktop Styles: Applied for screens 1024px and above ========== */
 @media screen and (min-width: 64rem) { /*1024px*/
   /* header adjustments for improved visibility and spacing on desktops */
@@ -541,44 +601,55 @@ a:focus {
     line-height: 1.75; /* increased line height for better readability on desktops*/
   }
 
+  /* Form adjustments for desktop and larger screens*/
   form {
-
+    max-width: 50%; /*limits form width for better alignment*/
+    padding: 3rem 4rem; /*increased padding for spacing*/
   }
 
 /* Adjusts input and textarea fields for better desktop presentation */
  input, textarea {
-  font-size: 1rem; /* increased font size for better readability on desktops */
-  padding: .75rem; /* increased padding for better spacing */
+  max-width: 100%; /*ensures form elements fit within container*/
+  font-size: 1.25rem; /* increased font size for better readability on desktops */
+  padding: 1.25rem; /* increased padding for better spacing */
+
 }
 
  input:focus,
  textarea:focus {
-
+  border-color: var(--accent-color);
 }
 
  a {
-
+  font-size: 1.2rem; /*increases font size for readbaility*/
 }
   
 a:hover,
 a:focus {
-
+  text-decoration: underline;
+  color: var(--dark-accent); /*adjusted hover color*/
 }
 
 h1 {
-
+  font-size: 3rem;
 }
 
 h1 a {
-
+  letter-spacing: 0.125rem;
 }
 
 h2 {
     color: #FFEFB2;
+    font-size: 2rem;
   }
 
+ul {
+  display: flex;
+  gap: 1rem;
+}
+
 header {
-    height: var(--header-height-sm); 
+    height: var(--header-height-lg); 
     padding-top: var(--header-height-lg); /*ensures content begins below header in desktops */
     background-color: var(--dark-bg); /* darker background for desktop distinction */
     text-align: center; /* centers text for better readability */
@@ -598,45 +669,54 @@ header {
   nav {
     position: sticky;
     top: 0; 
-    display: block; 
-    flex-direction: row;
-    flex-wrap: wrap; /*allows wrapping to prevent overflow*/
-    padding: 2rem 8rem; /* increased padding for desktop */
-    max-width: 75%; /* constrained width for better readability */
+    display: flex; /*enables flex properties*/
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center; /*aligns items vertically*/
+    padding: 2rem 4rem; /* increased padding for desktop */
+    height: 4rem;
+    width: 90%;
+    max-width: 75rem; /* constrained width for better readability */
     font-size: 1.6rem; /* increased font size for better visibility on desktops*/
-    gap: 2.5rem; /*increased gap between links for desktop*/
-    margin: 0 auto; /* centers navigation on desktop screens */
-    margin-bottom: 4rem;
+    margin: 0 auto 4rem auto;
+    margin-top: 4rem; /* centers navigation on desktop screens */
     background-color: var(--dark-bg); /* darker background for better contrast */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* subtle shadow for better separation */
     border-radius: 2rem; /*rounds corner on desktop */
     border-top: 4px solid var(--accent-color); /* adds a top border for desktop */
-    text-align: center; /* centers text for better readability */
     color: #ffffff;
+
+
+    /*margin-bottom: 4rem;
+    
+    text-align: center; /* centers text for better readability */
   }
 
   nav ul {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    width: 100%;
-    max-width: 90%;
+    flex-wrap: wrap;
+    width: 90%;
     padding: 0;
     margin: 0; 
     list-style: none;
-    gap: 2rem;
+    gap: 1.5rem;
   } 
 
   nav a {
     padding: 1rem 2rem; /*slightly larger padding on desktop*/
     color:#ccc; 
-   
-    
+    text-decoration: none; 
+    display: inline-block
+  }
+
+  nav li {
+    margin: 0 15px;
   }
 
 nav a:hover,
-nav:a focus {
+nav a:focus {
   color: var(--highlight-color); /* Change link color on hover for desktop */
   }
 
@@ -654,19 +734,20 @@ nav:a focus {
 
 /* About me section modifications for desktop presentation */
 .about-me-section {
-  padding: 5rem; /* increases padding for better content spacing*/
-  margin-top: 5rem;
+  padding: 4rem; /* increases padding for better content spacing*/
+  margin: 3rem 0;
+  margin-top: 12rem;
   font-size: 1.75rem; /* larger font for desktop viewing */
   background-color: var(--dark-bg); /* dark background for better contrast on desktop */
   color: #ffffff;
-  margin-top: 4rem;
   border-radius: 2rem;
   box-shadow: 0 8px 12px rgba(0, 0, 0, .3); /*increased box shadow for better visibility on desktop */
 }
 
 /* Experience section with three columns layout for optimal viewing on desktop */
 .experience-section {
-  grid-template-columns: 1fr 1fr 1fr; /* switched experience section to three-column layout for desktop screens */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* switched experience section to three-column layout for desktop screens */
   gap: 3rem; /*increased spacing between items */
   background-color: #333; /* dark background for better contrast */
   color: white; /*ensures text is visible on dark background */
@@ -674,43 +755,35 @@ nav:a focus {
   border-radius: 2rem; /* rounded corners for visual appeal */
   border: 1px solid var(--accent-color); /*accent border for consistency */
   transform: scale(1.05); /*slight scaling emphasis */
-  padding: 4rem; /* increases padding for better spacing*/
 }
 
 .experience-item {
-
+  padding: 2rem;
+  border: 2px solid var(--secondary-color);
 }
 
 .job-info {
-
+ flex-direction: row;
+ justify-content: space-between;
 }
 
 .job-title {
-
+  font-size: 1.3rem;
+  color: black;
 }
 
 .job-description {
-
+  font-size: 1.1rem;
 }
-/* Created skills flexbox layout for better presentation on desktop */
-skills ul {
-  display: flex; /* enables flex layout */
-  justify-content: space-between; /* evenly spaces items */
-  flex-wrap: wrap; /*wraps items to new line if width is limited*/
-  }
 
-  #skills li {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
-  }  
+/* Created skills flexbox layout for better presentation on desktop */
+
 
 #skills {
-    grid-template-columns: 1fr 1fr 1fr; /* switched experience section to three-column layout for desktop screens */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* switched experience section to three-column layout for desktop screens */
     gap: 3rem; /*increased spacing between items */
     background-color: #333; /* dark background for better contrast */
-    color: white; /*ensures text is visible on dark background */
     font-size: 1.25rem; /*larger font size for better readability */
     border-radius: 2rem; /* rounded corners for visual appeal */
     border: 1px solid var(--accent-color); /*accent border for consistency */
@@ -718,58 +791,98 @@ skills ul {
     padding: 4rem; /* increases padding for better spacing*/
   }
 
+  #skills ul {
+    display: flex; /* enables flex layout */
+    justify-content: space-between; /* evenly spaces items */
+    flex-wrap: wrap; /*wraps items to new line if width is limited*/
+    }
+  
+    #skills li {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+    }  
+
 /* Button stylings with interactive elements for desktop cursor precision */
 .button {
+  font-weight: bold;
   padding: 1.5rem 2rem; /* Enlarged padding for better clickability*/
   border-radius: 2rem; /* increases border radius */
   gap: 1.25rem; /* increases gap */
-  font-size: 1.75rem; /* Increased font size for better readability*/
+  font-size: 1.25rem; /* Increased font size for better readability*/
   border: 2px solid var(--accent-color);
 }
 
 .button:hover,
 .button:focus {
-
-}
-
-.button-container {
-
+  background-color: var(--accent-color);
+  color: #fff;
 }
 
 /*Projects section on desktop*/
 #projects {
-  grid-template-columns: 1fr 1fr 1fr; /* switched experience section to three-column layout for desktop screens */
+  display: grid;
+  grid-template-columns: repeat(3,1fr); /* switched experience section to three-column layout for desktop screens */
   gap: 3rem; /*increased spacing between items */
   background-color: #333; /* dark background for better contrast */
-  color: white; /*ensures text is visible on dark background */
   font-size: 1.25rem; /*larger font size for better readability */
   border-radius: 2rem; /* rounded corners for visual appeal */
   border: 1px solid var(--accent-color); /*accent border for consistency */
-  transform: scale(1.05); /*slight scaling emphasis */
+  transform: scale(1.05); /*slight zoom effect */
   padding: 4rem; /* increases padding for better spacing*/
 }
 
-.project-item {
-  max-width: 30%; /*allows three items per row on desktop*/
+#projects ul {
+  display: flex;
+  flex-direction: row;
+  max-width: 25rem; /*allows three items per row on desktop*/
+  padding: 2rem;
 }
 
-.project-item:hover {
-
+#projects li  {
+  font-size: 1rem;
+  color: #ffffff; /*ensures text is visible on dark background */;
+  line-height: 1.6;
 }
 
-.project-item p {
+#connect {
+    display: grid;
+    grid-template-columns: repeat(3,1fr); /* switched experience section to three-column layout for desktop screens */
+    gap: 3rem; /*increased spacing between items */
+    background-color: #333; /* dark background for better contrast */
+    color: white; /*ensures text is visible on dark background */
+    font-size: 1.25rem; /*larger font size for better readability */
+    border-radius: 2rem; /* rounded corners for visual appeal */
+    border: 1px solid var(--accent-color); /*accent border for consistency */
+    transform: scale(1.05); /*slight zoom effect */
+    padding: 4rem; /* increases padding for better spacing*/
+  }
 
+#leaveMessage {
+  background-color: #333;
+}
+
+#messages {
+  background-color: #333;
+}
+
+footer {
+  padding: 2rem;
+  text-align: center;
+  background-color: var(--footer-bg);
+  color: #ffffff;
 }
 
 /* Accessibility Styles */
 *:focus-visible {
   outline: 3px solid var(--accent-color);
-  outline-offset: 2px;
+  outline-offset: 3px;
+  box-shadow: 0 0 5px var(--accent-color);
 }
 
 img {
   max-width: 100%;
   height: auto;
   object-fit: cover;
-}
 }
