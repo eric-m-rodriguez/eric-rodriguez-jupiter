@@ -327,6 +327,7 @@ margin-top: 1rem;
   flex-direction: column;
   gap: 1rem;
   margin: 2rem 0;
+  width: 100%;
 }
 
 /*Respository List in Projects Section*/
@@ -364,6 +365,65 @@ margin-top: 1rem;
   font-size: 1rem;
   color: var(--text-color);
   text-align: center;
+}
+
+#messages {
+  padding: 1.5rem;
+  margin: 1rem 0;
+  background-color: var(--light-bg);
+  border: 2px solid var(--accent-color);
+  border-radius: 0.5rem;
+}
+
+#messages h2 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+#messages ul {
+  display: flex; 
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+#messages li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  background-color: #ffffff;
+  border: 1px solid var(--secondary-color);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#messages a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600px;
+}
+
+#messages span {
+  color: var(--text-color);
+  line-height: 1.4;
+}
+
+#messages button {
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer; 
+  transition: background-color 0.2s ease;
+}
+
+#message button:hover {
+  background-color: #bb2deb;
 }
 
 footer {
@@ -620,6 +680,8 @@ footer {
 }
   /* Button stylings with interactive elements for tablet cursor precision */
   .button {
+    max-width: auto;
+    min-width: 150px;
     padding: 1rem 2rem; /* more comfortable touch screen size */
     border: 2px solid var(--accent-color);
     border-radius: 1.25rem; /* rounded corners for visual appeal */
@@ -634,11 +696,37 @@ footer {
   
   }
   .button-container {
-    max-width: 20%;
+    max-width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 1rem;
   }
+
+#messages {
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+#messages ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+#messages li {
+  padding: 1.5rem;
+}
+
+#messages span {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+#messages button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+}
 
 footer {
   background-color: var(--dark-accent);
@@ -914,6 +1002,13 @@ nav a:focus {
     padding: 4rem; /* increases padding for better spacing*/
   }
 
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%
+}  
 #leaveMessage {
   background-color: var(--light-bg);
   padding: 2rem;
@@ -931,6 +1026,32 @@ nav a:focus {
   color: var(--primary-color);
  }
 
+ #message ul {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat (auto-fill, minmax(300px, 1fr));
+ }
+
+ #mesages li {
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  border: 1 px solid #ccc;
+ }
+
+#messages a{
+  color: #0066cc;
+  text-decoration: none;
+};
+
+#messages button {
+  margin-top: auto;
+  padding: 0.5rem;
+  background-color: #ff4444;
+  color: white;
+  border: none; 
+  border-radius: 4px;
+}
 footer {
   padding: 2rem;
   text-align: center;
