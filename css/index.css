@@ -216,12 +216,13 @@ section {
 
 .about-me-section {
   /*light background color for better contrast with dark text*/
+  scroll-margin-top: 8rem;
   display: block;
   padding: 1.5rem; /* padding for content spacing for default style */
   background-color: var(--light-bg); /* background color for better contrast */
   border: 2px solid var(--accent-color); /* border for better separation */
   border-radius: 8px; /* rounded corners for visual appeal */
-  margin-top: 4rem;
+  margin-top: 18rem;
   font-size: 1rem;
   text-align: center; /* center text for better readability */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a shadow for emphasis */
