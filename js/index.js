@@ -16,6 +16,9 @@ copyright.innerHTML = `${copyrightSymbol} Eric Rodriguez ${thisYear}`; /*sets in
 
 footer.appendChild(copyright); /*appends copyright element to footer*/
 
+
+/*Skills Section*/
+
 const skills = ['HTML', 'CSS', 'Javascript', 'GitHub']; /*creates an array of skills*/
 
 const skillsSection = document.querySelector("#skills"); /*selects skills section*/
@@ -29,8 +32,9 @@ for (let i = 0; i <skills.length; i++) {    /*iterates through skills array*/
     skill.innerText = skills[i]; /*selects inner text of list item*/
 
     skillsList.appendChild(skill); /*appends list item to skills section*/
-};
+}
 
+/*Leave a Message Section*/
 const messageForm = document.forms["leave_message"]; /*selects leave message form*/
 
 /*Retrieves values from form input fields*/
@@ -47,8 +51,10 @@ messageForm.addEventListener("submit", function(event) {/*adds events listener t
     console.log("Message:", usersMessage); /*logs user message to console log*/
 
     const messageSection = document.querySelector("#messages"); /*selects messages section*/
-    const messageList = messageSection.querySelector("ul"); /*selects unordered list in message section*/
-    const newMessage = document.createElement("li"); /*creates list item element*/
+
+    if (messageSection) { /*check if message section exists*/
+        const messageList = messageSection.querySelector("ul"); /*selects unordered list in message section*/
+        const newMessage = document.createElement("li"); /*creates list item element*/
 
     const userLink = document.createElement("a"); /*creates <a> element*/
 
@@ -57,7 +63,7 @@ messageForm.addEventListener("submit", function(event) {/*adds events listener t
 
     const messageText = document.createElement("span"); /*creates span element*/
    
-    messageText.textContent = usersMessage; /*sets text of span element as user's message*/
+    messageText.textContent = ": " + usersMessage; /*sets text of span element as user's message*/
 
     newMessage.appendChild(userLink); /*appends <a> element to list item*/
     newMessage.appendChild(messageText); /*appends span element to list item*/
@@ -77,10 +83,7 @@ messageForm.addEventListener("submit", function(event) {/*adds events listener t
 /*appends list item to unordered list in messages section*/
     newMessage.appendChild(removeButton); /*appends "Remove" button to list item*/
     messageList.appendChild(newMessage); /*appends list item to unordered list*/
-
-
-
-   
+}
     messageForm.reset(); /*resets form input fields*/
 });
 
@@ -102,7 +105,7 @@ fetch (githubUrl) /*fetches data from GitHub API*/
     
         for (let i = 0; i <repositories.length; i++) {
             const project = document.createElement('li'); /*creates list element*/
-            project.innerText = repositories[i].name; /*sets inner text of list element*/
+            project.textContent = repositories[i].name; /*sets inner text of list element*/
             projectList.appendChild(project); /*appends list element to project section*/
         }
     })
